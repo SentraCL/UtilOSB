@@ -1,0 +1,2650 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!-- XML Utils Details: version 8.0.0. Exported at 20190523-093047 by admin from server u174 -->
+<DEFJOB xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Jobdata.xsd">
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-MEN-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CONFIRM="0"
+        CREATED_BY="EnterSoft"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193636"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="INICIO MALLA RECEPCION FTM ISOL"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-000-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMNAME="INICIO ISL006"
+        MULTY_AGENT="N"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        PRIORITY="AA"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="controlm"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Dummy"
+        TIMEFROM="0730"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL001-0000-DIA-PL01" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-000-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-MEN-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CHANGE_DATE="20190522"
+        CHANGE_TIME="201817"
+        CHANGE_USERID="rmunoz"
+        CONFIRM="0"
+        CREATED_BY="emuser"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193637"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="EXTRAE ARCHIVO RENDICIONES ISOL ACE DESDE REDBCH"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-001-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMLIB="/u/etc/bin/"
+        MEMNAME="SOD_STAR.sch"
+        MULTY_AGENT="N"
+        NODEID="u111"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        TIMEFROM="1605"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-000-PL01-MEN" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-001-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%PARM1" VALUE="ured u293 redbch 03 CO-I-%%$ODATE..001 /u/data/scs/entrada/ CO-I-%%$ODATE.-ISOL.001 765 ISL006-001-PL01-MEN"/>
+        <ON CODE="COMPSTAT EQ 87" STMT="*">
+            <DOCOND NAME="ISL006-021-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+            <DOACTION ACTION="OK"/>
+        </ON>
+        <ON CODE="COMPSTAT EQ 0" STMT="*">
+            <DOCOND NAME="ISL006-001-PL01-MENOK" ODATE="ODAT" SIGN="+"/>
+        </ON>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-MEN-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CHANGE_DATE="20190522"
+        CHANGE_TIME="201817"
+        CHANGE_USERID="rmunoz"
+        CONFIRM="0"
+        CREATED_BY="emuser"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193639"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="EXTRAE ARCHIVO RENDICIONES ISOL BSV DESDE REDBCH"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-002-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMLIB="/u/etc/bin/"
+        MEMNAME="SOD_STAR.sch"
+        MULTY_AGENT="N"
+        NODEID="u111"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        TIMEFROM="1605"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-000-PL01-MEN" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-002-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%PARM1" VALUE="ured u293 redbch 03 CO-I-%%$ODATE..027 /u/data/scs/entrada/ CO-I-%%$ODATE.-ISOL.027 765 ISL006-002-PL01-MEN"/>
+        <ON CODE="COMPSTAT EQ 87" STMT="*">
+            <DOCOND NAME="ISL006-022-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+            <DOACTION ACTION="OK"/>
+        </ON>
+        <ON CODE="COMPSTAT EQ 0" STMT="*">
+            <DOCOND NAME="ISL006-002-PL01-MENOK" ODATE="ODAT" SIGN="+"/>
+        </ON>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-MEN-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CHANGE_DATE="20190522"
+        CHANGE_TIME="201817"
+        CHANGE_USERID="rmunoz"
+        CONFIRM="0"
+        CREATED_BY="emuser"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193640"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="EXTRAE ARCHIVO RENDICIONES ISOL CAD DESDE REDBCH"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-003-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMLIB="/u/etc/bin/"
+        MEMNAME="SOD_STAR.sch"
+        MULTY_AGENT="N"
+        NODEID="u111"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        TIMEFROM="1605"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-000-PL01-MEN" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-003-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%PARM1" VALUE="ured u293 redbch 03 CO-I-%%$ODATE..031 /u/data/scs/entrada/ CO-I-%%$ODATE.-ISOL.031 765 ISL006-003-PL01-MEN"/>
+        <ON CODE="COMPSTAT EQ 87" STMT="*">
+            <DOCOND NAME="ISL006-023-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+            <DOACTION ACTION="OK"/>
+        </ON>
+        <ON CODE="COMPSTAT EQ 0" STMT="*">
+            <DOCOND NAME="ISL006-003-PL01-MENOK" ODATE="ODAT" SIGN="+"/>
+        </ON>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-MEN-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CHANGE_DATE="20190522"
+        CHANGE_TIME="201817"
+        CHANGE_USERID="rmunoz"
+        CONFIRM="0"
+        CREATED_BY="emuser"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193641"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="EXTRAE ARCHIVO RENDICIONES ISOL CAR DESDE REDBCH"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-004-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMLIB="/u/etc/bin/"
+        MEMNAME="SOD_STAR.sch"
+        MULTY_AGENT="N"
+        NODEID="u111"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        TIMEFROM="1605"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-000-PL01-MEN" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-004-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%PARM1" VALUE="ured u293 redbch 03 CO-I-%%$ODATE..006 /u/data/scs/entrada/ CO-I-%%$ODATE.-ISOL.006 765 ISL006-004-PL01-MEN"/>
+        <ON CODE="COMPSTAT EQ 87" STMT="*">
+            <DOCOND NAME="ISL006-024-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+            <DOACTION ACTION="OK"/>
+        </ON>
+        <ON CODE="COMPSTAT EQ 0" STMT="*">
+            <DOCOND NAME="ISL006-004-PL01-MENOK" ODATE="ODAT" SIGN="+"/>
+        </ON>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-MEN-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CHANGE_DATE="20190522"
+        CHANGE_TIME="201817"
+        CHANGE_USERID="rmunoz"
+        CONFIRM="0"
+        CREATED_BY="emuser"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193642"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="EXTRAE ARCHIVO RENDICIONES ISOL CHC DESDE REDBCH"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-005-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMLIB="/u/etc/bin/"
+        MEMNAME="SOD_STAR.sch"
+        MULTY_AGENT="N"
+        NODEID="u111"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        TIMEFROM="1605"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-000-PL01-MEN" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-005-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%PARM1" VALUE="ured u293 redbch 03 CO-I-%%$ODATE..007 /u/data/scs/entrada/ CO-I-%%$ODATE.-ISOL.007 765 ISL006-005-PL01-MEN"/>
+        <ON CODE="COMPSTAT EQ 87" STMT="*">
+            <DOCOND NAME="ISL006-025-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+            <DOACTION ACTION="OK"/>
+        </ON>
+        <ON CODE="COMPSTAT EQ 0" STMT="*">
+            <DOCOND NAME="ISL006-005-PL01-MENOK" ODATE="ODAT" SIGN="+"/>
+        </ON>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-MEN-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CHANGE_DATE="20190522"
+        CHANGE_TIME="201817"
+        CHANGE_USERID="rmunoz"
+        CONFIRM="0"
+        CREATED_BY="emuser"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193643"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="EXTRAE ARCHIVO RENDICIONES ISOL CNS DESDE REDBCH"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-006-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMLIB="/u/etc/bin/"
+        MEMNAME="SOD_STAR.sch"
+        MULTY_AGENT="N"
+        NODEID="u111"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        TIMEFROM="1605"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-000-PL01-MEN" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-006-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%PARM1" VALUE="ured u293 redbch 03 CO-I-%%$ODATE..009 /u/data/scs/entrada/ CO-I-%%$ODATE.-ISOL.009 765 ISL006-006-PL01-MEN"/>
+        <ON CODE="COMPSTAT EQ 87" STMT="*">
+            <DOCOND NAME="ISL006-026-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+            <DOACTION ACTION="OK"/>
+        </ON>
+        <ON CODE="COMPSTAT EQ 0" STMT="*">
+            <DOCOND NAME="ISL006-006-PL01-MENOK" ODATE="ODAT" SIGN="+"/>
+        </ON>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-MEN-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CHANGE_DATE="20190522"
+        CHANGE_TIME="201817"
+        CHANGE_USERID="rmunoz"
+        CONFIRM="0"
+        CREATED_BY="emuser"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193644"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="EXTRAE ARCHIVO RENDICIONES ISOL LIB DESDE REDBCH"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-007-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMLIB="/u/etc/bin/"
+        MEMNAME="SOD_STAR.sch"
+        MULTY_AGENT="N"
+        NODEID="u111"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        TIMEFROM="1605"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-000-PL01-MEN" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-007-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%PARM1" VALUE="ured u293 redbch 03 CO-I-%%$ODATE..014 /u/data/scs/entrada/ CO-I-%%$ODATE.-ISOL.014 765 ISL006-007-PL01-MEN"/>
+        <ON CODE="COMPSTAT EQ 87" STMT="*">
+            <DOCOND NAME="ISL006-027-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+            <DOACTION ACTION="OK"/>
+        </ON>
+        <ON CODE="COMPSTAT EQ 0" STMT="*">
+            <DOCOND NAME="ISL006-007-PL01-MENOK" ODATE="ODAT" SIGN="+"/>
+        </ON>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-MEN-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CHANGE_DATE="20190522"
+        CHANGE_TIME="201817"
+        CHANGE_USERID="rmunoz"
+        CONFIRM="0"
+        CREATED_BY="emuser"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193645"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="EXTRAE ARCHIVO RENDICIONES ISOL MAP DESDE REDBCH"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-008-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMLIB="/u/etc/bin/"
+        MEMNAME="SOD_STAR.sch"
+        MULTY_AGENT="N"
+        NODEID="u111"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        TIMEFROM="1605"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-000-PL01-MEN" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-008-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%PARM1" VALUE="ured u293 redbch 03 CO-I-%%$ODATE..015 /u/data/scs/entrada/ CO-I-%%$ODATE.-ISOL.015 765 ISL006-008-PL01-MEN"/>
+        <ON CODE="COMPSTAT EQ 87" STMT="*">
+            <DOCOND NAME="ISL006-028-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+            <DOACTION ACTION="OK"/>
+        </ON>
+        <ON CODE="COMPSTAT EQ 0" STMT="*">
+            <DOCOND NAME="ISL006-008-PL01-MENOK" ODATE="ODAT" SIGN="+"/>
+        </ON>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-MEN-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CHANGE_DATE="20190522"
+        CHANGE_TIME="201817"
+        CHANGE_USERID="rmunoz"
+        CONFIRM="0"
+        CREATED_BY="emuser"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193646"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="EXTRAE ARCHIVO RENDICIONES ISOL MET DESDE REDBCH"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-009-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMLIB="/u/etc/bin/"
+        MEMNAME="SOD_STAR.sch"
+        MULTY_AGENT="N"
+        NODEID="u111"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        TIMEFROM="1605"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-000-PL01-MEN" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-009-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%PARM1" VALUE="ured u293 redbch 03 CO-I-%%$ODATE..016 /u/data/scs/entrada/ CO-I-%%$ODATE.-ISOL.016 765 ISL006-009-PL01-MEN"/>
+        <ON CODE="COMPSTAT EQ 87" STMT="*">
+            <DOCOND NAME="ISL006-029-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+            <DOACTION ACTION="OK"/>
+        </ON>
+        <ON CODE="COMPSTAT EQ 0" STMT="*">
+            <DOCOND NAME="ISL006-009-PL01-MENOK" ODATE="ODAT" SIGN="+"/>
+        </ON>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-MEN-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CHANGE_DATE="20190522"
+        CHANGE_TIME="201817"
+        CHANGE_USERID="rmunoz"
+        CONFIRM="0"
+        CREATED_BY="emuser"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193647"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="EXTRAE ARCHIVO RENDICIONES ISOL MEV DESDE REDBCH"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-010-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMLIB="/u/etc/bin/"
+        MEMNAME="SOD_STAR.sch"
+        MULTY_AGENT="N"
+        NODEID="u111"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        TIMEFROM="1605"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-000-PL01-MEN" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-010-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%PARM1" VALUE="ured u293 redbch 03 CO-I-%%$ODATE..047 /u/data/scs/entrada/ CO-I-%%$ODATE.-ISOL.047 765 ISL006-010-PL01-MEN"/>
+        <ON CODE="COMPSTAT EQ 87" STMT="*">
+            <DOCOND NAME="ISL006-030-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+            <DOACTION ACTION="OK"/>
+        </ON>
+        <ON CODE="COMPSTAT EQ 0" STMT="*">
+            <DOCOND NAME="ISL006-010-PL01-MENOK" ODATE="ODAT" SIGN="+"/>
+        </ON>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-MEN-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CHANGE_DATE="20190522"
+        CHANGE_TIME="201817"
+        CHANGE_USERID="rmunoz"
+        CONFIRM="0"
+        CREATED_BY="emuser"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193648"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="EXTRAE ARCHIVO RENDICIONES ISOL RYA DESDE REDBCH"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-011-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMLIB="/u/etc/bin/"
+        MEMNAME="SOD_STAR.sch"
+        MULTY_AGENT="N"
+        NODEID="u111"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        TIMEFROM="1605"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-000-PL01-MEN" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-011-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%PARM1" VALUE="ured u293 redbch 03 CO-I-%%$ODATE..021 /u/data/scs/entrada/ CO-I-%%$ODATE.-ISOL.021 765 ISL006-011-PL01-MEN"/>
+        <ON CODE="COMPSTAT EQ 87" STMT="*">
+            <DOCOND NAME="ISL006-031-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+            <DOACTION ACTION="OK"/>
+        </ON>
+        <ON CODE="COMPSTAT EQ 0" STMT="*">
+            <DOCOND NAME="ISL006-011-PL01-MENOK" ODATE="ODAT" SIGN="+"/>
+        </ON>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-MEN-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CHANGE_DATE="20190522"
+        CHANGE_TIME="201817"
+        CHANGE_USERID="rmunoz"
+        CONFIRM="0"
+        CREATED_BY="emuser"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193649"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="EXTRAE ARCHIVO RENDICIONES ISOL ZEN DESDE REDBCH"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-012-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMLIB="/u/etc/bin/"
+        MEMNAME="SOD_STAR.sch"
+        MULTY_AGENT="N"
+        NODEID="u111"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        TIMEFROM="1605"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-000-PL01-MEN" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-012-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%PARM1" VALUE="ured u293 redbch 03 CO-I-%%$ODATE..023 /u/data/scs/entrada/ CO-I-%%$ODATE.-ISOL.023 765 ISL006-012-PL01-MEN"/>
+        <ON CODE="COMPSTAT EQ 87" STMT="*">
+            <DOCOND NAME="ISL006-032-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+            <DOACTION ACTION="OK"/>
+        </ON>
+        <ON CODE="COMPSTAT EQ 0" STMT="*">
+            <DOCOND NAME="ISL006-012-PL01-MENOK" ODATE="ODAT" SIGN="+"/>
+        </ON>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-MEN-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CHANGE_DATE="20190522"
+        CHANGE_TIME="201817"
+        CHANGE_USERID="rmunoz"
+        CONFIRM="0"
+        CREATED_BY="emuser"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193650"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="EXTRAE ARCHIVO RENDICIONES ISOL CRV DESDE REDBCH"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-013-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMLIB="/u/etc/bin/"
+        MEMNAME="SOD_STAR.sch"
+        MULTY_AGENT="N"
+        NODEID="u111"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        TIMEFROM="1605"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-000-PL01-MEN" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-013-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%PARM1" VALUE="ured u293 redbch 03 CO-I-%%$ODATE..056 /u/data/scs/entrada/ CO-I-%%$ODATE.-ISOL.056 765 ISL006-013-PL01-MEN"/>
+        <ON CODE="COMPSTAT EQ 87" STMT="*">
+            <DOCOND NAME="ISL006-033-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+            <DOACTION ACTION="OK"/>
+        </ON>
+        <ON CODE="COMPSTAT EQ 0" STMT="*">
+            <DOCOND NAME="ISL006-013-PL01-MENOK" ODATE="ODAT" SIGN="+"/>
+        </ON>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-MEN-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CHANGE_DATE="20190522"
+        CHANGE_TIME="201817"
+        CHANGE_USERID="rmunoz"
+        CONFIRM="0"
+        CREATED_BY="emuser"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193651"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="EXTRAE ARCHIVO RENDICIONES ISOL CON DESDE REDBCH"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-014-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMLIB="/u/etc/bin/"
+        MEMNAME="SOD_STAR.sch"
+        MULTY_AGENT="N"
+        NODEID="u111"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        TIMEFROM="1605"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-000-PL01-MEN" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-014-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%PARM1" VALUE="ured u293 redbch 03 CO-I-%%$ODATE..039 /u/data/scs/entrada/ CO-I-%%$ODATE.-ISOL.039 765 ISL006-014-PL01-MEN"/>
+        <ON CODE="COMPSTAT EQ 87" STMT="*">
+            <DOCOND NAME="ISL006-034-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+            <DOACTION ACTION="OK"/>
+        </ON>
+        <ON CODE="COMPSTAT EQ 0" STMT="*">
+            <DOCOND NAME="ISL006-014-PL01-MENOK" ODATE="ODAT" SIGN="+"/>
+        </ON>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-MEN-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CHANGE_DATE="20190522"
+        CHANGE_TIME="201817"
+        CHANGE_USERID="rmunoz"
+        CONFIRM="0"
+        CREATED_BY="emuser"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193653"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="EXTRAE ARCHIVO RENDICIONES ISOL CHV DESDE REDBCH"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-015-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMLIB="/u/etc/bin/"
+        MEMNAME="SOD_STAR.sch"
+        MULTY_AGENT="N"
+        NODEID="u111"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        TIMEFROM="1605"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-000-PL01-MEN" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-015-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%PARM1" VALUE="ured u293 redbch 03 CO-I-%%$ODATE..034 /u/data/scs/entrada/ CO-I-%%$ODATE.-ISOL.034 765 ISL006-015-PL01-MEN"/>
+        <ON CODE="COMPSTAT EQ 87" STMT="*">
+            <DOCOND NAME="ISL006-035-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+            <DOACTION ACTION="OK"/>
+        </ON>
+        <ON CODE="COMPSTAT EQ 0" STMT="*">
+            <DOCOND NAME="ISL006-015-PL01-MENOK" ODATE="ODAT" SIGN="+"/>
+        </ON>
+    </JOB>
+    <JOB
+        APPLICATION="ISL-MEN-PL01"
+        APPL_FORM="AFT"
+        APPL_TYPE="FILE_TRANS"
+        APPL_VER="7.0.0"
+        APR="1"
+        AUG="1"
+        AUTOARCH="1"
+        CM_VER="N/A"
+        CONFIRM="0"
+        CREATED_BY="gbasulto"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193654"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Envia Rendiciones ACE a cs01"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00001M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-021-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="0"
+        MAY="1"
+        MEMNAME="Envia Rendiciones ACE a cs01"
+        MULTY_AGENT="N"
+        NODEID="u574"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="aft_cs01_u293"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="1"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-001-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-001-PL01-MENOK" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-021-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%FTP-PATH" VALUE="Not in use for application jobs"/>
+        <VARIABLE NAME="%%FTP-ACCOUNT" VALUE="aft_cs01_u293"/>
+        <VARIABLE NAME="%%FTP-LOSTYPE" VALUE="Windows"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE1" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-LHOST" VALUE="cs01"/>
+        <VARIABLE NAME="%%FTP-LUSER" VALUE="isol"/>
+        <VARIABLE NAME="%%FTP-LPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ROSTYPE" VALUE="Unix"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE2" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-RHOST" VALUE="u293"/>
+        <VARIABLE NAME="%%FTP-RUSER" VALUE="tdatos"/>
+        <VARIABLE NAME="%%FTP-RPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SaveTransfers" VALUE="True"/>
+        <VARIABLE NAME="%%FTP-TYPE1" VALUE="I"/>
+        <VARIABLE NAME="%%FTP-UPLOAD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-LPATH1" VALUE="/ISOL\DATA\CIAINPUT\CO-I-%%$ODATE.-ISOL.001"/>
+        <VARIABLE NAME="%%FTP-RPATH1" VALUE="/u/data/scs/entrada/CO-I-%%$ODATE.-ISOL.001"/>
+        <VARIABLE NAME="%%FTP-TIMELIMIT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ABSTIME1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SRCOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-IF_EXIST1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-DSTOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-UNIQUE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-RECURSIVE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRIM1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-NULLFLDS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-VERNUM1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-EXCLUDE_WILDCARD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-CASEIFS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRANSFER_NUM" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-CONT_EXE_NOTOK" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-RPF" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-USE_DEF_NUMRETRIES" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-NUM_RETRIES" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-Is" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-AUTOREFRESH" VALUE="False"/>
+    </JOB>
+    <JOB
+        APPLICATION="ISL-MEN-PL01"
+        APPL_FORM="AFT"
+        APPL_TYPE="FILE_TRANS"
+        APPL_VER="7.0.0"
+        APR="1"
+        AUG="1"
+        AUTOARCH="1"
+        CM_VER="N/A"
+        CONFIRM="0"
+        CREATED_BY="gbasulto"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193655"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Envia Rendiciones BSV a cs01"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00001M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-022-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="0"
+        MAY="1"
+        MEMNAME="Envia Rendiciones BSV a cs01"
+        MULTY_AGENT="N"
+        NODEID="u574"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="aft_cs01_u293"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="1"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-002-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-002-PL01-MENOK" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-022-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%FTP-PATH" VALUE="Not in use for application jobs"/>
+        <VARIABLE NAME="%%FTP-ACCOUNT" VALUE="aft_cs01_u293"/>
+        <VARIABLE NAME="%%FTP-LOSTYPE" VALUE="Windows"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE1" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-LHOST" VALUE="cs01"/>
+        <VARIABLE NAME="%%FTP-LUSER" VALUE="isol"/>
+        <VARIABLE NAME="%%FTP-LPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ROSTYPE" VALUE="Unix"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE2" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-RHOST" VALUE="u293"/>
+        <VARIABLE NAME="%%FTP-RUSER" VALUE="tdatos"/>
+        <VARIABLE NAME="%%FTP-RPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SaveTransfers" VALUE="True"/>
+        <VARIABLE NAME="%%FTP-TYPE1" VALUE="I"/>
+        <VARIABLE NAME="%%FTP-UPLOAD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-LPATH1" VALUE="/ISOL\DATA\CIAINPUT\CO-I-%%$ODATE.-ISOL.027"/>
+        <VARIABLE NAME="%%FTP-RPATH1" VALUE="/u/data/scs/entrada/CO-I-%%$ODATE.-ISOL.027"/>
+        <VARIABLE NAME="%%FTP-TIMELIMIT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ABSTIME1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SRCOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-IF_EXIST1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-DSTOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-UNIQUE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-RECURSIVE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRIM1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-NULLFLDS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-VERNUM1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-EXCLUDE_WILDCARD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-CASEIFS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRANSFER_NUM" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-CONT_EXE_NOTOK" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-RPF" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-USE_DEF_NUMRETRIES" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-NUM_RETRIES" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-Is" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-AUTOREFRESH" VALUE="False"/>
+    </JOB>
+    <JOB
+        APPLICATION="ISL-MEN-PL01"
+        APPL_FORM="AFT"
+        APPL_TYPE="FILE_TRANS"
+        APPL_VER="7.0.0"
+        APR="1"
+        AUG="1"
+        AUTOARCH="1"
+        CM_VER="N/A"
+        CONFIRM="0"
+        CREATED_BY="gbasulto"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193656"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Envia Rendiciones CAD a cs01"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00001M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-023-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="0"
+        MAY="1"
+        MEMNAME="Envia Rendiciones CAD a cs01"
+        MULTY_AGENT="N"
+        NODEID="u574"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="aft_cs01_u293"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="1"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-003-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-003-PL01-MENOK" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-023-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%FTP-PATH" VALUE="Not in use for application jobs"/>
+        <VARIABLE NAME="%%FTP-ACCOUNT" VALUE="aft_cs01_u293"/>
+        <VARIABLE NAME="%%FTP-LOSTYPE" VALUE="Windows"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE1" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-LHOST" VALUE="cs01"/>
+        <VARIABLE NAME="%%FTP-LUSER" VALUE="isol"/>
+        <VARIABLE NAME="%%FTP-LPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ROSTYPE" VALUE="Unix"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE2" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-RHOST" VALUE="u293"/>
+        <VARIABLE NAME="%%FTP-RUSER" VALUE="tdatos"/>
+        <VARIABLE NAME="%%FTP-RPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SaveTransfers" VALUE="True"/>
+        <VARIABLE NAME="%%FTP-TYPE1" VALUE="I"/>
+        <VARIABLE NAME="%%FTP-UPLOAD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-LPATH1" VALUE="/ISOL\DATA\CIAINPUT\CO-I-%%$ODATE.-ISOL.031"/>
+        <VARIABLE NAME="%%FTP-RPATH1" VALUE="/u/data/scs/entrada/CO-I-%%$ODATE.-ISOL.031"/>
+        <VARIABLE NAME="%%FTP-TIMELIMIT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ABSTIME1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SRCOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-IF_EXIST1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-DSTOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-UNIQUE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-RECURSIVE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRIM1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-NULLFLDS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-VERNUM1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-EXCLUDE_WILDCARD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-CASEIFS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRANSFER_NUM" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-CONT_EXE_NOTOK" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-RPF" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-USE_DEF_NUMRETRIES" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-NUM_RETRIES" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-Is" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-AUTOREFRESH" VALUE="False"/>
+    </JOB>
+    <JOB
+        APPLICATION="ISL-MEN-PL01"
+        APPL_FORM="AFT"
+        APPL_TYPE="FILE_TRANS"
+        APPL_VER="7.0.0"
+        APR="1"
+        AUG="1"
+        AUTOARCH="1"
+        CM_VER="N/A"
+        CONFIRM="0"
+        CREATED_BY="gbasulto"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193657"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Envia Rendiciones CAR a cs01"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00001M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-024-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="0"
+        MAY="1"
+        MEMNAME="Envia Rendiciones CAR a cs01"
+        MULTY_AGENT="N"
+        NODEID="u574"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="aft_cs01_u293"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="1"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-004-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-004-PL01-MENOK" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-024-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%FTP-PATH" VALUE="Not in use for application jobs"/>
+        <VARIABLE NAME="%%FTP-ACCOUNT" VALUE="aft_cs01_u293"/>
+        <VARIABLE NAME="%%FTP-LOSTYPE" VALUE="Windows"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE1" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-LHOST" VALUE="cs01"/>
+        <VARIABLE NAME="%%FTP-LUSER" VALUE="isol"/>
+        <VARIABLE NAME="%%FTP-LPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ROSTYPE" VALUE="Unix"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE2" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-RHOST" VALUE="u293"/>
+        <VARIABLE NAME="%%FTP-RUSER" VALUE="tdatos"/>
+        <VARIABLE NAME="%%FTP-RPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SaveTransfers" VALUE="True"/>
+        <VARIABLE NAME="%%FTP-TYPE1" VALUE="I"/>
+        <VARIABLE NAME="%%FTP-UPLOAD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-LPATH1" VALUE="/ISOL\DATA\CIAINPUT\CO-I-%%$ODATE.-ISOL.006"/>
+        <VARIABLE NAME="%%FTP-RPATH1" VALUE="/u/data/scs/entrada/CO-I-%%$ODATE.-ISOL.006"/>
+        <VARIABLE NAME="%%FTP-TIMELIMIT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ABSTIME1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SRCOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-IF_EXIST1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-DSTOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-UNIQUE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-RECURSIVE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRIM1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-NULLFLDS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-VERNUM1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-EXCLUDE_WILDCARD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-CASEIFS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRANSFER_NUM" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-CONT_EXE_NOTOK" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-RPF" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-USE_DEF_NUMRETRIES" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-NUM_RETRIES" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-Is" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-AUTOREFRESH" VALUE="False"/>
+    </JOB>
+    <JOB
+        APPLICATION="ISL-MEN-PL01"
+        APPL_FORM="AFT"
+        APPL_TYPE="FILE_TRANS"
+        APPL_VER="7.0.0"
+        APR="1"
+        AUG="1"
+        AUTOARCH="1"
+        CM_VER="N/A"
+        CONFIRM="0"
+        CREATED_BY="gbasulto"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193658"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Envia Rendiciones CHC a cs01"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00001M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-025-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="0"
+        MAY="1"
+        MEMNAME="Envia Rendiciones CHC a cs01"
+        MULTY_AGENT="N"
+        NODEID="u574"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="aft_cs01_u293"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="1"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-005-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-005-PL01-MENOK" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-025-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%FTP-PATH" VALUE="Not in use for application jobs"/>
+        <VARIABLE NAME="%%FTP-ACCOUNT" VALUE="aft_cs01_u293"/>
+        <VARIABLE NAME="%%FTP-LOSTYPE" VALUE="Windows"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE1" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-LHOST" VALUE="cs01"/>
+        <VARIABLE NAME="%%FTP-LUSER" VALUE="isol"/>
+        <VARIABLE NAME="%%FTP-LPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ROSTYPE" VALUE="Unix"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE2" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-RHOST" VALUE="u293"/>
+        <VARIABLE NAME="%%FTP-RUSER" VALUE="tdatos"/>
+        <VARIABLE NAME="%%FTP-RPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SaveTransfers" VALUE="True"/>
+        <VARIABLE NAME="%%FTP-TYPE1" VALUE="I"/>
+        <VARIABLE NAME="%%FTP-UPLOAD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-LPATH1" VALUE="/ISOL\DATA\CIAINPUT\CO-I-%%$ODATE.-ISOL.007"/>
+        <VARIABLE NAME="%%FTP-RPATH1" VALUE="/u/data/scs/entrada/CO-I-%%$ODATE.-ISOL.007"/>
+        <VARIABLE NAME="%%FTP-TIMELIMIT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ABSTIME1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SRCOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-IF_EXIST1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-DSTOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-UNIQUE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-RECURSIVE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRIM1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-NULLFLDS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-VERNUM1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-EXCLUDE_WILDCARD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-CASEIFS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRANSFER_NUM" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-CONT_EXE_NOTOK" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-RPF" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-USE_DEF_NUMRETRIES" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-NUM_RETRIES" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-Is" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-AUTOREFRESH" VALUE="False"/>
+    </JOB>
+    <JOB
+        APPLICATION="ISL-MEN-PL01"
+        APPL_FORM="AFT"
+        APPL_TYPE="FILE_TRANS"
+        APPL_VER="7.0.0"
+        APR="1"
+        AUG="1"
+        AUTOARCH="1"
+        CM_VER="N/A"
+        CONFIRM="0"
+        CREATED_BY="gbasulto"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193659"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Envia Rendiciones CNS a cs01"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00001M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-026-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="0"
+        MAY="1"
+        MEMNAME="Envia Rendiciones CNS a cs01"
+        MULTY_AGENT="N"
+        NODEID="u574"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="aft_cs01_u293"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="1"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-006-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-006-PL01-MENOK" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-026-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%FTP-PATH" VALUE="Not in use for application jobs"/>
+        <VARIABLE NAME="%%FTP-ACCOUNT" VALUE="aft_cs01_u293"/>
+        <VARIABLE NAME="%%FTP-LOSTYPE" VALUE="Windows"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE1" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-LHOST" VALUE="cs01"/>
+        <VARIABLE NAME="%%FTP-LUSER" VALUE="isol"/>
+        <VARIABLE NAME="%%FTP-LPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ROSTYPE" VALUE="Unix"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE2" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-RHOST" VALUE="u293"/>
+        <VARIABLE NAME="%%FTP-RUSER" VALUE="tdatos"/>
+        <VARIABLE NAME="%%FTP-RPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SaveTransfers" VALUE="True"/>
+        <VARIABLE NAME="%%FTP-TYPE1" VALUE="I"/>
+        <VARIABLE NAME="%%FTP-UPLOAD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-LPATH1" VALUE="/ISOL\DATA\CIAINPUT\CO-I-%%$ODATE.-ISOL.009"/>
+        <VARIABLE NAME="%%FTP-RPATH1" VALUE="/u/data/scs/entrada/CO-I-%%$ODATE.-ISOL.009"/>
+        <VARIABLE NAME="%%FTP-TIMELIMIT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ABSTIME1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SRCOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-IF_EXIST1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-DSTOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-UNIQUE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-RECURSIVE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRIM1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-NULLFLDS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-VERNUM1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-EXCLUDE_WILDCARD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-CASEIFS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRANSFER_NUM" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-CONT_EXE_NOTOK" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-RPF" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-USE_DEF_NUMRETRIES" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-NUM_RETRIES" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-Is" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-AUTOREFRESH" VALUE="False"/>
+    </JOB>
+    <JOB
+        APPLICATION="ISL-MEN-PL01"
+        APPL_FORM="AFT"
+        APPL_TYPE="FILE_TRANS"
+        APPL_VER="7.0.0"
+        APR="1"
+        AUG="1"
+        AUTOARCH="1"
+        CM_VER="N/A"
+        CONFIRM="0"
+        CREATED_BY="gbasulto"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193700"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Envia Rendiciones LIB a cs01"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00001M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-027-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="0"
+        MAY="1"
+        MEMNAME="Envia Rendiciones LIB a cs01"
+        MULTY_AGENT="N"
+        NODEID="u574"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="aft_cs01_u293"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="1"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-007-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-007-PL01-MENOK" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-027-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%FTP-PATH" VALUE="Not in use for application jobs"/>
+        <VARIABLE NAME="%%FTP-ACCOUNT" VALUE="aft_cs01_u293"/>
+        <VARIABLE NAME="%%FTP-LOSTYPE" VALUE="Windows"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE1" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-LHOST" VALUE="cs01"/>
+        <VARIABLE NAME="%%FTP-LUSER" VALUE="isol"/>
+        <VARIABLE NAME="%%FTP-LPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ROSTYPE" VALUE="Unix"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE2" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-RHOST" VALUE="u293"/>
+        <VARIABLE NAME="%%FTP-RUSER" VALUE="tdatos"/>
+        <VARIABLE NAME="%%FTP-RPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SaveTransfers" VALUE="True"/>
+        <VARIABLE NAME="%%FTP-TYPE1" VALUE="I"/>
+        <VARIABLE NAME="%%FTP-UPLOAD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-LPATH1" VALUE="/ISOL\DATA\CIAINPUT\CO-I-%%$ODATE.-ISOL.014"/>
+        <VARIABLE NAME="%%FTP-RPATH1" VALUE="/u/data/scs/entrada/CO-I-%%$ODATE.-ISOL.014"/>
+        <VARIABLE NAME="%%FTP-TIMELIMIT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ABSTIME1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SRCOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-IF_EXIST1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-DSTOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-UNIQUE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-RECURSIVE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRIM1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-NULLFLDS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-VERNUM1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-EXCLUDE_WILDCARD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-CASEIFS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRANSFER_NUM" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-CONT_EXE_NOTOK" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-RPF" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-USE_DEF_NUMRETRIES" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-NUM_RETRIES" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-Is" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-AUTOREFRESH" VALUE="False"/>
+    </JOB>
+    <JOB
+        APPLICATION="ISL-MEN-PL01"
+        APPL_FORM="AFT"
+        APPL_TYPE="FILE_TRANS"
+        APPL_VER="7.0.0"
+        APR="1"
+        AUG="1"
+        AUTOARCH="1"
+        CM_VER="N/A"
+        CONFIRM="0"
+        CREATED_BY="gbasulto"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193702"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Envia Rendiciones MAP a cs01"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00001M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-028-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="0"
+        MAY="1"
+        MEMNAME="Envia Rendiciones MAP a cs01"
+        MULTY_AGENT="N"
+        NODEID="u574"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="aft_cs01_u293"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="1"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-008-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-008-PL01-MENOK" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-028-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%FTP-PATH" VALUE="Not in use for application jobs"/>
+        <VARIABLE NAME="%%FTP-ACCOUNT" VALUE="aft_cs01_u293"/>
+        <VARIABLE NAME="%%FTP-LOSTYPE" VALUE="Windows"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE1" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-LHOST" VALUE="cs01"/>
+        <VARIABLE NAME="%%FTP-LUSER" VALUE="isol"/>
+        <VARIABLE NAME="%%FTP-LPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ROSTYPE" VALUE="Unix"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE2" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-RHOST" VALUE="u293"/>
+        <VARIABLE NAME="%%FTP-RUSER" VALUE="tdatos"/>
+        <VARIABLE NAME="%%FTP-RPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SaveTransfers" VALUE="True"/>
+        <VARIABLE NAME="%%FTP-TYPE1" VALUE="I"/>
+        <VARIABLE NAME="%%FTP-UPLOAD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-LPATH1" VALUE="/ISOL\DATA\CIAINPUT\CO-I-%%$ODATE.-ISOL.015"/>
+        <VARIABLE NAME="%%FTP-RPATH1" VALUE="/u/data/scs/entrada/CO-I-%%$ODATE.-ISOL.015"/>
+        <VARIABLE NAME="%%FTP-TIMELIMIT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ABSTIME1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SRCOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-IF_EXIST1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-DSTOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-UNIQUE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-RECURSIVE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRIM1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-NULLFLDS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-VERNUM1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-EXCLUDE_WILDCARD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-CASEIFS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRANSFER_NUM" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-CONT_EXE_NOTOK" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-RPF" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-USE_DEF_NUMRETRIES" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-NUM_RETRIES" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-Is" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-AUTOREFRESH" VALUE="False"/>
+    </JOB>
+    <JOB
+        APPLICATION="ISL-MEN-PL01"
+        APPL_FORM="AFT"
+        APPL_TYPE="FILE_TRANS"
+        APPL_VER="7.0.0"
+        APR="1"
+        AUG="1"
+        AUTOARCH="1"
+        CM_VER="N/A"
+        CONFIRM="0"
+        CREATED_BY="gbasulto"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193703"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Envia Rendiciones MET a cs01"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00001M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-029-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="0"
+        MAY="1"
+        MEMNAME="Envia Rendiciones MET a cs01"
+        MULTY_AGENT="N"
+        NODEID="u574"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="aft_cs01_u293"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="1"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-009-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-009-PL01-MENOK" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-029-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%FTP-PATH" VALUE="Not in use for application jobs"/>
+        <VARIABLE NAME="%%FTP-ACCOUNT" VALUE="aft_cs01_u293"/>
+        <VARIABLE NAME="%%FTP-LOSTYPE" VALUE="Windows"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE1" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-LHOST" VALUE="cs01"/>
+        <VARIABLE NAME="%%FTP-LUSER" VALUE="isol"/>
+        <VARIABLE NAME="%%FTP-LPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ROSTYPE" VALUE="Unix"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE2" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-RHOST" VALUE="u293"/>
+        <VARIABLE NAME="%%FTP-RUSER" VALUE="tdatos"/>
+        <VARIABLE NAME="%%FTP-RPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SaveTransfers" VALUE="True"/>
+        <VARIABLE NAME="%%FTP-TYPE1" VALUE="I"/>
+        <VARIABLE NAME="%%FTP-UPLOAD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-LPATH1" VALUE="/ISOL\DATA\CIAINPUT\CO-I-%%$ODATE.-ISOL.016"/>
+        <VARIABLE NAME="%%FTP-RPATH1" VALUE="/u/data/scs/entrada/CO-I-%%$ODATE.-ISOL.016"/>
+        <VARIABLE NAME="%%FTP-TIMELIMIT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ABSTIME1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SRCOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-IF_EXIST1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-DSTOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-UNIQUE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-RECURSIVE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRIM1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-NULLFLDS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-VERNUM1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-EXCLUDE_WILDCARD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-CASEIFS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRANSFER_NUM" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-CONT_EXE_NOTOK" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-RPF" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-USE_DEF_NUMRETRIES" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-NUM_RETRIES" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-Is" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-AUTOREFRESH" VALUE="False"/>
+    </JOB>
+    <JOB
+        APPLICATION="ISL-MEN-PL01"
+        APPL_FORM="AFT"
+        APPL_TYPE="FILE_TRANS"
+        APPL_VER="7.0.0"
+        APR="1"
+        AUG="1"
+        AUTOARCH="1"
+        CM_VER="N/A"
+        CONFIRM="0"
+        CREATED_BY="gbasulto"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193704"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Envia Rendiciones MEV a cs01"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00001M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-030-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="0"
+        MAY="1"
+        MEMNAME="Envia Rendiciones MEV a cs01"
+        MULTY_AGENT="N"
+        NODEID="u574"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="aft_cs01_u293"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="1"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-010-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-010-PL01-MENOK" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-030-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%FTP-PATH" VALUE="Not in use for application jobs"/>
+        <VARIABLE NAME="%%FTP-ACCOUNT" VALUE="aft_cs01_u293"/>
+        <VARIABLE NAME="%%FTP-LOSTYPE" VALUE="Windows"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE1" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-LHOST" VALUE="cs01"/>
+        <VARIABLE NAME="%%FTP-LUSER" VALUE="isol"/>
+        <VARIABLE NAME="%%FTP-LPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ROSTYPE" VALUE="Unix"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE2" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-RHOST" VALUE="u293"/>
+        <VARIABLE NAME="%%FTP-RUSER" VALUE="tdatos"/>
+        <VARIABLE NAME="%%FTP-RPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SaveTransfers" VALUE="True"/>
+        <VARIABLE NAME="%%FTP-TYPE1" VALUE="I"/>
+        <VARIABLE NAME="%%FTP-UPLOAD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-LPATH1" VALUE="/ISOL\DATA\CIAINPUT\CO-I-%%$ODATE.-ISOL.047"/>
+        <VARIABLE NAME="%%FTP-RPATH1" VALUE="/u/data/scs/entrada/CO-I-%%$ODATE.-ISOL.047"/>
+        <VARIABLE NAME="%%FTP-TIMELIMIT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ABSTIME1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SRCOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-IF_EXIST1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-DSTOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-UNIQUE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-RECURSIVE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRIM1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-NULLFLDS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-VERNUM1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-EXCLUDE_WILDCARD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-CASEIFS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRANSFER_NUM" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-CONT_EXE_NOTOK" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-RPF" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-USE_DEF_NUMRETRIES" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-NUM_RETRIES" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-Is" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-AUTOREFRESH" VALUE="False"/>
+    </JOB>
+    <JOB
+        APPLICATION="ISL-MEN-PL01"
+        APPL_FORM="AFT"
+        APPL_TYPE="FILE_TRANS"
+        APPL_VER="7.0.0"
+        APR="1"
+        AUG="1"
+        AUTOARCH="1"
+        CM_VER="N/A"
+        CONFIRM="0"
+        CREATED_BY="gbasulto"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193705"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Envia Rendiciones RYA a cs01"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00001M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-031-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="0"
+        MAY="1"
+        MEMNAME="Envia Rendiciones RYA a cs01"
+        MULTY_AGENT="N"
+        NODEID="u574"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="aft_cs01_u293"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="1"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-011-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-011-PL01-MENOK" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-031-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%FTP-PATH" VALUE="Not in use for application jobs"/>
+        <VARIABLE NAME="%%FTP-ACCOUNT" VALUE="aft_cs01_u293"/>
+        <VARIABLE NAME="%%FTP-LPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-RPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SaveTransfers" VALUE="True"/>
+        <VARIABLE NAME="%%FTP-TYPE1" VALUE="I"/>
+        <VARIABLE NAME="%%FTP-UPLOAD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-LPATH1" VALUE="/ISOL\DATA\CIAINPUT\CO-I-%%$ODATE.-ISOL.021"/>
+        <VARIABLE NAME="%%FTP-RPATH1" VALUE="/u/data/scs/entrada/CO-I-%%$ODATE.-ISOL.021"/>
+        <VARIABLE NAME="%%FTP-TIMELIMIT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ABSTIME1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SRCOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-IF_EXIST1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-DSTOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-UNIQUE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-RECURSIVE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRIM1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-NULLFLDS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-VERNUM1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-EXCLUDE_WILDCARD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-CASEIFS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRANSFER_NUM" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-CONT_EXE_NOTOK" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-RPF" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-USE_DEF_NUMRETRIES" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-NUM_RETRIES" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-Is" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-AUTOREFRESH" VALUE="False"/>
+    </JOB>
+    <JOB
+        APPLICATION="ISL-MEN-PL01"
+        APPL_FORM="AFT"
+        APPL_TYPE="FILE_TRANS"
+        APPL_VER="7.0.0"
+        APR="1"
+        AUG="1"
+        AUTOARCH="1"
+        CM_VER="N/A"
+        CONFIRM="0"
+        CREATED_BY="gbasulto"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193706"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Envia Rendiciones ZEN a cs01"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00001M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-032-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="0"
+        MAY="1"
+        MEMNAME="Envia Rendiciones ZEN a cs01"
+        MULTY_AGENT="N"
+        NODEID="u574"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="aft_cs01_u293"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="1"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-012-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-012-PL01-MENOK" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-032-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%FTP-PATH" VALUE="Not in use for application jobs"/>
+        <VARIABLE NAME="%%FTP-ACCOUNT" VALUE="aft_cs01_u293"/>
+        <VARIABLE NAME="%%FTP-LOSTYPE" VALUE="Windows"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE1" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-LHOST" VALUE="cs01"/>
+        <VARIABLE NAME="%%FTP-LUSER" VALUE="isol"/>
+        <VARIABLE NAME="%%FTP-LPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ROSTYPE" VALUE="Unix"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE2" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-RHOST" VALUE="u293"/>
+        <VARIABLE NAME="%%FTP-RUSER" VALUE="tdatos"/>
+        <VARIABLE NAME="%%FTP-RPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SaveTransfers" VALUE="True"/>
+        <VARIABLE NAME="%%FTP-TYPE1" VALUE="I"/>
+        <VARIABLE NAME="%%FTP-UPLOAD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-LPATH1" VALUE="/ISOL\DATA\CIAINPUT\CO-I-%%$ODATE.-ISOL.023"/>
+        <VARIABLE NAME="%%FTP-RPATH1" VALUE="/u/data/scs/entrada/CO-I-%%$ODATE.-ISOL.023"/>
+        <VARIABLE NAME="%%FTP-TIMELIMIT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ABSTIME1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SRCOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-IF_EXIST1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-DSTOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-UNIQUE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-RECURSIVE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRIM1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-NULLFLDS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-VERNUM1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-EXCLUDE_WILDCARD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-CASEIFS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRANSFER_NUM" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-CONT_EXE_NOTOK" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-RPF" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-USE_DEF_NUMRETRIES" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-NUM_RETRIES" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-Is" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-AUTOREFRESH" VALUE="False"/>
+    </JOB>
+    <JOB
+        APPLICATION="ISL-MEN-PL01"
+        APPL_FORM="AFT"
+        APPL_TYPE="FILE_TRANS"
+        APPL_VER="7.0.0"
+        APR="1"
+        AUG="1"
+        AUTOARCH="1"
+        CM_VER="N/A"
+        CONFIRM="0"
+        CREATED_BY="gbasulto"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193707"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Envia Rendiciones CRV  a cs01"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00001M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-033-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="0"
+        MAY="1"
+        MEMNAME="Envia Rendiciones CRV  a cs01"
+        MULTY_AGENT="N"
+        NODEID="u574"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="aft_cs01_u293"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="1"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-013-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-013-PL01-MENOK" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-033-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%FTP-PATH" VALUE="Not in use for application jobs"/>
+        <VARIABLE NAME="%%FTP-ACCOUNT" VALUE="aft_cs01_u293"/>
+        <VARIABLE NAME="%%FTP-LOSTYPE" VALUE="Windows"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE1" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-LHOST" VALUE="cs01"/>
+        <VARIABLE NAME="%%FTP-LUSER" VALUE="isol"/>
+        <VARIABLE NAME="%%FTP-LPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ROSTYPE" VALUE="Unix"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE2" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-RHOST" VALUE="u293"/>
+        <VARIABLE NAME="%%FTP-RUSER" VALUE="tdatos"/>
+        <VARIABLE NAME="%%FTP-RPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TYPE1" VALUE="I"/>
+        <VARIABLE NAME="%%FTP-UPLOAD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-LPATH1" VALUE="/ISOL\DATA\CIAINPUT\CO-I-%%$ODATE.-ISOL.056"/>
+        <VARIABLE NAME="%%FTP-RPATH1" VALUE="/u/data/scs/entrada/CO-I-%%$ODATE.-ISOL.056"/>
+        <VARIABLE NAME="%%FTP-TIMELIMIT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ABSTIME1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SRCOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-IF_EXIST1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-DSTOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-UNIQUE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-RECURSIVE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRIM1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-NULLFLDS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-VERNUM1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-EXCLUDE_WILDCARD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-CASEIFS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRANSFER_NUM" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-CONT_EXE_NOTOK" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-RPF" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-USE_DEF_NUMRETRIES" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-NUM_RETRIES" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-Is" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-AUTOREFRESH" VALUE="False"/>
+    </JOB>
+    <JOB
+        APPLICATION="ISL-MEN-PL01"
+        APPL_FORM="AFT"
+        APPL_TYPE="FILE_TRANS"
+        APPL_VER="7.0.0"
+        APR="1"
+        AUG="1"
+        AUTOARCH="1"
+        CM_VER="N/A"
+        CONFIRM="0"
+        CREATED_BY="gbasulto"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193708"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Envia Rendiciones CON  a cs01"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00001M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-034-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="0"
+        MAY="1"
+        MEMNAME="Envia Rendiciones CON  a cs01"
+        MULTY_AGENT="N"
+        NODEID="u574"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="aft_cs01_u293"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="1"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-014-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-014-PL01-MENOK" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-034-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%FTP-PATH" VALUE="Not in use for application jobs"/>
+        <VARIABLE NAME="%%FTP-ACCOUNT" VALUE="aft_cs01_u293"/>
+        <VARIABLE NAME="%%FTP-LOSTYPE" VALUE="Windows"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE1" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-LHOST" VALUE="cs01"/>
+        <VARIABLE NAME="%%FTP-LUSER" VALUE="isol"/>
+        <VARIABLE NAME="%%FTP-LPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ROSTYPE" VALUE="Unix"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE2" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-RHOST" VALUE="u293"/>
+        <VARIABLE NAME="%%FTP-RUSER" VALUE="tdatos"/>
+        <VARIABLE NAME="%%FTP-RPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TYPE1" VALUE="I"/>
+        <VARIABLE NAME="%%FTP-UPLOAD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-LPATH1" VALUE="/ISOL\DATA\CIAINPUT\CO-I-%%$ODATE.-ISOL.039"/>
+        <VARIABLE NAME="%%FTP-RPATH1" VALUE="/u/data/scs/entrada/CO-I-%%$ODATE.-ISOL.039"/>
+        <VARIABLE NAME="%%FTP-TIMELIMIT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ABSTIME1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SRCOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-IF_EXIST1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-DSTOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-UNIQUE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-RECURSIVE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRIM1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-NULLFLDS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-VERNUM1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-EXCLUDE_WILDCARD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-CASEIFS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRANSFER_NUM" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-CONT_EXE_NOTOK" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-RPF" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-USE_DEF_NUMRETRIES" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-NUM_RETRIES" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-Is" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-AUTOREFRESH" VALUE="False"/>
+    </JOB>
+    <JOB
+        APPLICATION="ISL-MEN-PL01"
+        APPL_FORM="AFT"
+        APPL_TYPE="FILE_TRANS"
+        APPL_VER="7.0.0"
+        APR="1"
+        AUG="1"
+        AUTOARCH="1"
+        CM_VER="N/A"
+        CONFIRM="0"
+        CREATED_BY="gbasulto"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193709"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Envia Rendiciones CHV  a cs01"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00001M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-035-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="0"
+        MAY="1"
+        MEMNAME="Envia Rendiciones CHV  a cs01"
+        MULTY_AGENT="N"
+        NODEID="u574"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="aft_cs01_u293"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="1"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-015-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-015-PL01-MENOK" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL006-035-PL01-MEN" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%FTP-PATH" VALUE="Not in use for application jobs"/>
+        <VARIABLE NAME="%%FTP-ACCOUNT" VALUE="aft_cs01_u293"/>
+        <VARIABLE NAME="%%FTP-LOSTYPE" VALUE="Windows"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE1" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-LHOST" VALUE="cs01"/>
+        <VARIABLE NAME="%%FTP-LUSER" VALUE="isol"/>
+        <VARIABLE NAME="%%FTP-LPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ROSTYPE" VALUE="Unix"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE2" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-RHOST" VALUE="u293"/>
+        <VARIABLE NAME="%%FTP-RUSER" VALUE="tdatos"/>
+        <VARIABLE NAME="%%FTP-RPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TYPE1" VALUE="I"/>
+        <VARIABLE NAME="%%FTP-UPLOAD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-LPATH1" VALUE="/ISOL\DATA\CIAINPUT\CO-I-%%$ODATE.-ISOL.034"/>
+        <VARIABLE NAME="%%FTP-RPATH1" VALUE="/u/data/scs/entrada/CO-I-%%$ODATE.-ISOL.034"/>
+        <VARIABLE NAME="%%FTP-TIMELIMIT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ABSTIME1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SRCOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-IF_EXIST1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-DSTOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-UNIQUE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-RECURSIVE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRIM1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-NULLFLDS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-VERNUM1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-EXCLUDE_WILDCARD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-CASEIFS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRANSFER_NUM" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-CONT_EXE_NOTOK" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-RPF" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-USE_DEF_NUMRETRIES" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-NUM_RETRIES" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-Is" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-AUTOREFRESH" VALUE="False"/>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-MEN-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CHANGE_DATE="20190522"
+        CHANGE_TIME="200558"
+        CHANGE_USERID="rmunoz"
+        CMDLINE="ctmcontb -DELETE ISL006-*-PL01-MEN %%OMONTH.%%ODAY"
+        CONFIRM="0"
+        CREATED_BY="EnterSoft"
+        CREATION_DATE="20190522"
+        CREATION_TIME="193710"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="FIN MALLA ISL006"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL006-999-PL01-MEN"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMNAME="FIN ISL006"
+        MULTY_AGENT="N"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        PRIORITY="AA"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="controlm"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL006-MEN-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Command"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL006-021-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-022-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-023-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-024-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-025-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-026-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-027-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-028-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-029-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-030-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-031-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-032-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-033-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-034-PL01-MEN" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="ISL006-035-PL01-MEN" ODATE="ODAT"/>
+        <ON CODE="COMPSTAT EQ 0" STMT="*">
+            <DOCOND NAME="ISL001-0100-DIA-PL01" ODATE="ODAT" SIGN="+"/>
+        </ON>
+    </JOB>
+</DEFJOB>

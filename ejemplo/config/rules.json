@@ -1,0 +1,15 @@
+{
+    "rules": [{
+        "id": 950,
+        "title": "DATACENTER",
+        "tag": "DATACENTER",
+        "description": "El campo DATACENTER debe solamente contener 'BcoChile'",
+        "regex": "(DATACENTER= \"BcoChile\")"
+    }, {
+        "id": 1000,
+        "title": "MEMNAME",
+        "tag": "MEMNAME",
+        "description": "El campo MEMNAME debe contener una glosa explicativa del proceso",
+        "regex": "MEMNAME=(.*)"
+    }]
+}

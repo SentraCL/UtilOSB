@@ -1,0 +1,1030 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!-- XML Utils Details: version 8.0.0. Exported at 20190522-211800 by admin from server u174 -->
+<DEFJOB xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Jobdata.xsd">
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-DIA-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CONFIRM="0"
+        CREATED_BY="EnterSoft"
+        CREATION_DATE="20190516"
+        CREATION_TIME="121222"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="-D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="INICIO MALLA GENERACION COBRANZA"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL001-000-PL01-DIA"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMNAME="INICIO ISL001"
+        MULTY_AGENT="N"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        PRIORITY="AA"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="controlm"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL001-DIA-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Dummy"
+        TIMEFROM="0730"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL001-0000-DIA-PL01" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL001-000-PL01-DIA" ODATE="ODAT" SIGN="+"/>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-DIA-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CHANGE_DATE="20190522"
+        CHANGE_TIME="200558"
+        CHANGE_USERID="rmunoz"
+        CMDLINE="D:\ISOL\PROCESOS\ISLD005.BAT"
+        CONFIRM="0"
+        CREATED_BY="EnterSoft"
+        CREATION_DATE="20190516"
+        CREATION_TIME="121224"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Ejecucion Proceso Cargo/Abonos Sistema CASA"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL001-010-PL01-DIA"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMNAME="ISLD005.BAT"
+        MULTY_AGENT="N"
+        NODEID="pl01"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        PRIORITY="AA"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL001-DIA-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Command"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="O" NAME="ISL001-000-PL01-DIA" ODATE="ODAT"/>
+        <INCOND AND_OR="O" NAME="ISL001-100-PL01-DIA" ODATE="ODAT"/>
+        <INCOND AND_OR="O" NAME="ISL001-200-PL01-DIA" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL001-010-PL01-DIA" ODATE="ODAT" SIGN="+"/>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-DIA-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CMDLINE="D:\ISOL\PROCESOS\ISLD001.BAT %%PARM1"
+        CONFIRM="0"
+        CREATED_BY="EnterSoft"
+        CREATION_DATE="20190516"
+        CREATION_TIME="121225"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Ejecucion Proceso Cobranza para PAC otros Bancos"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL001-030-PL01-DIA"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMNAME="ISLD001.BAT"
+        MULTY_AGENT="N"
+        NODEID="pl01"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        PRIORITY="AA"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL001-DIA-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Command"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL001-020-PL01-DIA" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL001-030-PL01-DIA" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%PARM1" VALUE="129"/>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-DIA-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CMDLINE="ctmcontb -delete ISL001-*-PL01-DIA %%OMONTH.%%ODAY"
+        CONFIRM="0"
+        CREATED_BY="EnterSoft"
+        CREATION_DATE="20190516"
+        CREATION_TIME="121226"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="FIN MALLA ISL001"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL001-999-PL01-DIA"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMNAME="FIN ISL001"
+        MULTY_AGENT="N"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        PRIORITY="AA"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="controlm"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL001-DIA-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Command"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL001-060-PL01-DIA" ODATE="ODAT"/>
+        <ON CODE="COMPSTAT EQ 0" STMT="*">
+            <DOCOND NAME="ISL002-0000-DIA-PL01" ODATE="ODAT" SIGN="+"/>
+            <DOCOND NAME="ISL016-0000-DIA-PL01" ODATE="ODAT" SIGN="+"/>
+        </ON>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-DIA-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CMDLINE="D:\ISOL\PROCESOS\ISLD008.BAT %%PARM1"
+        CONFIRM="0"
+        CREATED_BY="EnterSoft"
+        CREATION_DATE="20190516"
+        CREATION_TIME="121227"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Generacion que aplica respuesta en ISOL"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL001-060-PL01-DIA"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMNAME="ISLD008.BAT"
+        MULTY_AGENT="N"
+        NODEID="pl01"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        PRIORITY="AA"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL001-DIA-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Command"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL001-050-PL01-DIA" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL001-060-PL01-DIA" ODATE="ODAT" SIGN="+"/>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-DIA-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CMDLINE="D:\ISOL\PROCESOS\ISLD007.BAT %%PARM1"
+        CONFIRM="0"
+        CREATED_BY="EnterSoft"
+        CREATION_DATE="20190516"
+        CREATION_TIME="121229"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Recepción y validación interfaces con respuesta sistema CASA"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL001-050-PL01-DIA"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMNAME="ISLD007.BAT"
+        MULTY_AGENT="N"
+        NODEID="pl01"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        PRIORITY="AA"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL001-DIA-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Command"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL001-071-PL01-DIA" ODATE="ODAT"/>
+        <INCOND AND_OR="A" NAME="FXCCAS-INTDAY-084" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL001-050-PL01-DIA" ODATE="ODAT" SIGN="+"/>
+        <OUTCOND NAME="FXCCAS-INTDAY-084" ODATE="ODAT" SIGN="-"/>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-DIA-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CHANGE_DATE="20190516"
+        CHANGE_TIME="123618"
+        CHANGE_USERID="parce"
+        CONFIRM="0"
+        CREATED_BY="EnterSoft"
+        CREATION_DATE="20190516"
+        CREATION_TIME="121230"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D2"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="INICIO MALLA CONFIGURACION DEPENDENCIA MENSUAL D+2"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL001-100-PL01-DIA"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMNAME="INICIO ISL001"
+        MULTY_AGENT="N"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        PRIORITY="AA"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="controlm"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL001-DIA-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Dummy"
+        TIMEFROM="0730"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL001-0100-DIA-PL01" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL001-100-PL01-DIA" ODATE="ODAT" SIGN="+"/>
+    </JOB>
+    <JOB
+        APPLICATION="ISL-DIA-PL01"
+        APPL_FORM="AFT"
+        APPL_TYPE="FILE_TRANS"
+        APPL_VER="7.0.0"
+        APR="1"
+        AUG="1"
+        AUTOARCH="1"
+        CM_VER="N/A"
+        CONFIRM="0"
+        CREATED_BY="gbasulto"
+        CREATION_DATE="20190516"
+        CREATION_TIME="121231"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Envio Interfaces Sistema CASA"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00001M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL001-020-PL01-DIA"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="0"
+        MAY="1"
+        MEMNAME="Envio Interfaces Sistema CASA"
+        MULTY_AGENT="N"
+        NODEID="u574"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="aft_cs01_a007"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL001-DIA-PL01"
+        SYSDB="1"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL001-010-PL01-DIA" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL001-020-PL01-DIA" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%FTP-PATH" VALUE="Not in use for application jobs"/>
+        <VARIABLE NAME="%%FTP-ACCOUNT" VALUE="aft_cs01_a007"/>
+        <VARIABLE NAME="%%FTP-LOSTYPE" VALUE="Windows"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE1" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-LHOST" VALUE="cs01"/>
+        <VARIABLE NAME="%%FTP-LUSER" VALUE="isol"/>
+        <VARIABLE NAME="%%FTP-LPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ROSTYPE" VALUE="Unix"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE2" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-RHOST" VALUE="a007"/>
+        <VARIABLE NAME="%%FTP-RUSER" VALUE="tdatos"/>
+        <VARIABLE NAME="%%FTP-RPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TYPE1" VALUE="A"/>
+        <VARIABLE NAME="%%FTP-UPLOAD1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-LPATH1" VALUE="/ISOL\DATA/OUTPUT/ISLCTDD01.FC"/>
+        <VARIABLE NAME="%%FTP-RPATH1" VALUE="/u/data/fc/f3/ent/dia/ISLCTDD01.FC"/>
+        <VARIABLE NAME="%%FTP-TIMELIMIT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ABSTIME1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SRCOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-IF_EXIST1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-DSTOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-FILE_PFX1" VALUE="TMP."/>
+        <VARIABLE NAME="%%FTP-CONT_EXE1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-DEL_DEST_ON_FAILURE1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-UNIQUE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-RECURSIVE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRIM1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-NULLFLDS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-VERNUM1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-EXCLUDE_WILDCARD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-CASEIFS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRANSFER_NUM" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-CONT_EXE_NOTOK" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-RPF" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-USE_DEF_NUMRETRIES" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-NUM_RETRIES" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-Is" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-AUTOREFRESH" VALUE="False"/>
+        <ON CODE="COMPSTAT EQ 0" STMT="*">
+            <DOCOND NAME="FXCCAS-INTDAY-D080" ODATE="ODAT" SIGN="+"/>
+        </ON>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-DIA-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CMDLINE="D:\ISOL\PROCESOS\ISLD052.BAT %%PARM1"
+        CONFIRM="0"
+        CREATED_BY="EnterSoft"
+        CREATION_DATE="20190516"
+        CREATION_TIME="121232"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Generación nomina NMO"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL001-045-PL01-DIA"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMNAME="ISLD052.BAT"
+        MULTY_AGENT="N"
+        NODEID="pl01"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        PRIORITY="AA"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL001-DIA-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Command"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL001-040-PL01-DIA" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL001-045-PL01-DIA" ODATE="ODAT" SIGN="+"/>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-DIA-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CMDLINE="D:\ISOL\PROCESOS\ISLD053.BAT %%PARM1 %%PARM2"
+        CONFIRM="0"
+        CREATED_BY="EnterSoft"
+        CREATION_DATE="20190516"
+        CREATION_TIME="121233"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Valida interfaz ISLNMOD01.FC"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL001-046-PL01-DIA"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMNAME="ISLD053.BAT"
+        MULTY_AGENT="N"
+        NODEID="pl01"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        PRIORITY="AA"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL001-DIA-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Command"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL001-045-PL01-DIA" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL001-046-PL01-DIA" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%PARM1" VALUE="ISLNMOD01.FC"/>
+        <VARIABLE NAME="%%PARM2" VALUE="\ISOL\DATA\OUTPUT\"/>
+    </JOB>
+    <JOB
+        APPLICATION="ISL-DIA-PL01"
+        APPL_FORM="AFT"
+        APPL_TYPE="FILE_TRANS"
+        APPL_VER="7.0.0"
+        APR="1"
+        AUG="1"
+        AUTOARCH="1"
+        CM_VER="N/A"
+        CONFIRM="0"
+        CREATED_BY="gbasulto"
+        CREATION_DATE="20190516"
+        CREATION_TIME="121234"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Envio Interfaz nomina cuotas cobro PAC"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00001M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL001-040-PL01-DIA"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="0"
+        MAY="1"
+        MEMNAME="Envio Interfaz nomina cuotas cobro PAC"
+        MULTY_AGENT="N"
+        NODEID="u574"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="aft_cs01_u103"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL001-DIA-PL01"
+        SYSDB="1"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL001-030-PL01-DIA" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL001-040-PL01-DIA" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%FTP-PATH" VALUE="Not in use for application jobs"/>
+        <VARIABLE NAME="%%FTP-ACCOUNT" VALUE="aft_cs01_u103"/>
+        <VARIABLE NAME="%%FTP-LOSTYPE" VALUE="Windows"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE1" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-LHOST" VALUE="cs01"/>
+        <VARIABLE NAME="%%FTP-LUSER" VALUE="isol"/>
+        <VARIABLE NAME="%%FTP-LPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ROSTYPE" VALUE="Unix"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE2" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-RHOST" VALUE="u103"/>
+        <VARIABLE NAME="%%FTP-RUSER" VALUE="tdatos"/>
+        <VARIABLE NAME="%%FTP-RPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TYPE1" VALUE="A"/>
+        <VARIABLE NAME="%%FTP-UPLOAD1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-LPATH1" VALUE="/ISOL\DATA/OUTPUT/ISL%%$ODATE"/>
+        <VARIABLE NAME="%%FTP-RPATH1" VALUE="/u/data/pac/entrada/ISL%%$ODATE"/>
+        <VARIABLE NAME="%%FTP-TIMELIMIT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ABSTIME1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SRCOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-IF_EXIST1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-DSTOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-FILE_PFX1" VALUE="TMP."/>
+        <VARIABLE NAME="%%FTP-CONT_EXE1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-DEL_DEST_ON_FAILURE1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-UNIQUE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-RECURSIVE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRIM1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-NULLFLDS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-VERNUM1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-EXCLUDE_WILDCARD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-CASEIFS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRANSFER_NUM" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-CONT_EXE_NOTOK" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-RPF" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-USE_DEF_NUMRETRIES" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-NUM_RETRIES" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-Is" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-AUTOREFRESH" VALUE="False"/>
+        <ON CODE="COMPSTAT EQ 0" STMT="*">
+            <DOCOND NAME="ISL001-040-DIA-U163" ODATE="ODAT" SIGN="+"/>
+        </ON>
+    </JOB>
+    <JOB
+        APPLICATION="ISL-DIA-PL01"
+        APPL_FORM="AFT"
+        APPL_TYPE="FILE_TRANS"
+        APPL_VER="7.0.0"
+        APR="1"
+        AUG="1"
+        AUTOARCH="1"
+        CM_VER="N/A"
+        CONFIRM="0"
+        CREATED_BY="gbasulto"
+        CREATION_DATE="20190516"
+        CREATION_TIME="121235"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Envia ISLNMOD01.FC a u315"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00001M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL001-047-PL01-DIA"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="0"
+        MAY="1"
+        MEMNAME="Envia ISLNMOD01.FC a u315"
+        MULTY_AGENT="N"
+        NODEID="u574"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="aft_cs01_u315"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL001-DIA-PL01"
+        SYSDB="1"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Job"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL001-046-PL01-DIA" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL001-047-PL01-DIA" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%FTP-PATH" VALUE="Not in use for application jobs"/>
+        <VARIABLE NAME="%%FTP-ACCOUNT" VALUE="aft_cs01_u315"/>
+        <VARIABLE NAME="%%FTP-LOSTYPE" VALUE="Windows"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE1" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-LHOST" VALUE="cs01"/>
+        <VARIABLE NAME="%%FTP-LUSER" VALUE="isol"/>
+        <VARIABLE NAME="%%FTP-LPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ROSTYPE" VALUE="Unix"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE2" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-RHOST" VALUE="u315"/>
+        <VARIABLE NAME="%%FTP-RUSER" VALUE="tdatos"/>
+        <VARIABLE NAME="%%FTP-RPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TYPE1" VALUE="A"/>
+        <VARIABLE NAME="%%FTP-UPLOAD1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-LPATH1" VALUE="/ISOL\DATA\OUTPUT\ISLNMOD01.FC_%%$ODATE"/>
+        <VARIABLE NAME="%%FTP-RPATH1" VALUE="/u/data/NMO/FILE_INTERNO/ISLNMOD01.FC_%%$ODATE"/>
+        <VARIABLE NAME="%%FTP-TIMELIMIT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ABSTIME1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SRCOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-IF_EXIST1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-DSTOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-FILE_PFX1" VALUE="TMP."/>
+        <VARIABLE NAME="%%FTP-CONT_EXE1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-DEL_DEST_ON_FAILURE1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-UNIQUE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-RECURSIVE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRIM1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-NULLFLDS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-VERNUM1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-EXCLUDE_WILDCARD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-CASEIFS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRANSFER_NUM" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-CONT_EXE_NOTOK" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-RPF" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-USE_DEF_NUMRETRIES" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-NUM_RETRIES" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-Is" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-AUTOREFRESH" VALUE="False"/>
+        <ON CODE="COMPSTAT EQ 0" STMT="*">
+            <DOCOND NAME="ISL001-047-PL01-DIAT" ODATE="ODAT" SIGN="+"/>
+        </ON>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-DIA-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CMDLINE="D:\ISOL\PROCESOS\ISLD055.BAT"
+        CONFIRM="0"
+        CREATED_BY="parcep"
+        CREATION_DATE="20190516"
+        CREATION_TIME="121237"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Generación interfaz Mandatos o Movimientos (TBK)"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL001-070-PL01-DIA"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMNAME="ISLD055.BAT"
+        MULTY_AGENT="N"
+        NODEID="pl01"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        PRIORITY="AA"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL001-DIA-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Command"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL001-047-PL01-DIA" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL001-070-PL01-DIA-211" ODATE="ODAT" SIGN="+"/>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-DIA-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CMDLINE="D:\ISOL\PROCESOS\ISLD056.BAT"
+        CONFIRM="0"
+        CREATED_BY="parcep"
+        CREATION_DATE="20190516"
+        CREATION_TIME="121238"
+        CREATION_USER="admin"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Generación interfaces Nominas (TBK)"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL001-071-PL01-DIA"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMNAME="ISLD056.BAT"
+        MULTY_AGENT="N"
+        NODEID="pl01"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        PRIORITY="AA"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL001-DIA-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Command"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL001-070-PL01-DIA-211" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL001-071-PL01-DIA" ODATE="ODAT" SIGN="+"/>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-DIA-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CHANGE_DATE="20190516"
+        CHANGE_TIME="123618"
+        CHANGE_USERID="parce"
+        CONFIRM="0"
+        CREATED_BY="BCH-PAP"
+        CREATION_DATE="20190516"
+        CREATION_TIME="122941"
+        CREATION_USER="parce"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D10"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="INICIO MALLA CONFIGURACION DEPENDENCIA MENSUAL D+10"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="0"
+        JOBNAME="ISL001-200-PL01-DIA"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMNAME="INICIO ISL001-DIA"
+        MULTY_AGENT="N"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        PRIORITY="AA"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="controlm"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL001-DIA-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TABLE_USERDAILY="SIETETRE"
+        TASKTYPE="Dummy"
+        TIMEFROM="0730"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL001-0200-PL01-DIA" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL001-200-PL01-DIA" ODATE="ODAT" SIGN="+"/>
+    </JOB>
+</DEFJOB>

@@ -1,0 +1,5 @@
+{
+    "rules": [
+        "1" // Todos los element del documento deben tener nombres con el primer caracter en minuscula
+    ]
+}

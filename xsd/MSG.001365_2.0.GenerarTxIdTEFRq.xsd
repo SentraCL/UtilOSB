@@ -1,0 +1,34 @@
+<xsd:schema targetNamespace="http://osb.bancochile.cl/bch/neg/transferenciaDeFondos/generarTxIdTEFRq/mpi" 
+elementFormDefault="qualified" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns="http://www.w3.org/2001/XMLSchema" 
+xmlns:tns="http://osb.bancochile.cl/bch/neg/transferenciaDeFondos/generarTxIdTEFRq/mpi" 
+xmlns:com="http://osb.bancochile.cl/ent/bch/infra/mci/comun/v/3">
+
+<xsd:import namespace="http://osb.bancochile.cl/ent/bch/infra/mci/comun/v/3" schemaLocation="../../../BCH.INFRA.ModeloComunInformacion/Specifications/ENT.3.0.BCH.INFRA.Comun.xsd"/>
+    <xsd:annotation>
+    <xsd:documentation>
+      Estructura de entrada usada para llamar al servicio.
+    </xsd:documentation>
+  </xsd:annotation>
+  
+  <xsd:element name="generarTxIdTEFRq" type="tns:GenerarTxIdTEFRq"/>
+    <xsd:complexType name="GenerarTxIdTEFRq">
+      <xsd:sequence>
+        <xsd:element name="canal" type="tns:StringMax7" minOccurs="1" maxOccurs="1">
+	<xsd:annotation>
+          <xsd:documentation>Identificador de la persona</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+ 
+  <xsd:simpleType name="StringMax7">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="7"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+      <xsd:annotation>
+        <xsd:documentation>Definicion maxima del largo Elemento Canal</xsd:documentation>
+      </xsd:annotation>
+</xsd:schema>

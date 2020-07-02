@@ -1,0 +1,338 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!-- XML Utils Details: version 8.0.0. Exported at 20180601-110207 by admin from server u174 -->
+<DEFJOB xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Jobdata.xsd">
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-MEN-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CONFIRM="0"
+        CREATED_BY="EnterSoft"
+        CREATION_DATE="20180530"
+        CREATION_TIME="113846"
+        CREATION_USER="gbasulto"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D5"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="INICIO MALLA P&amp;O Envio Banchile"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="131"
+        JOBNAME="ISL004-000-MEN-PL01"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMNAME="INICIO ISL004 MEN"
+        MULTY_AGENT="N"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        PRIORITY="AA"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="controlm"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL004-MEN-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TASKTYPE="Dummy"
+        TIMEFROM="2200"
+        USE_INSTREAM_JCL="N"
+>
+        <OUTCOND NAME="ISL004-000-MEN-PL01" ODATE="ODAT" SIGN="+"/>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-MEN-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CONFIRM="0"
+        CREATED_BY="EnterSoft"
+        CREATION_DATE="20180530"
+        CREATION_TIME="113846"
+        CREATION_USER="gbasulto"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D5"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Generacion cobro de cuotas a Recursos Humanos Corredora"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="132"
+        JOBNAME="ISL004-010-MEN-PL01"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMLIB="D:\ISOL\PROCESOS\"
+        MEMNAME="ISLD300.BAT"
+        MULTY_AGENT="N"
+        NODEID="pl01"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        PRIORITY="AA"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL004-MEN-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TASKTYPE="Job"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL004-000-MEN-PL01" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL004-010-MEN-PL01" ODATE="ODAT" SIGN="+"/>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-MEN-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CMDLINE="ctmcontb -delete ISL004-*-MEN-PL01 %%OMONTH.%%ODAY"
+        CONFIRM="0"
+        CREATED_BY="EnterSoft"
+        CREATION_DATE="20180530"
+        CREATION_TIME="113846"
+        CREATION_USER="gbasulto"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D5"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="FIN MALLA ISL004-MEN-PL01"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="133"
+        JOBNAME="ISL004-999-MEN-PL01"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMNAME="FIN ISL004-MEN-PL01"
+        MULTY_AGENT="N"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        PRIORITY="AA"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="controlm"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL004-MEN-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TASKTYPE="Command"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL004-030-MEN-PL01" ODATE="ODAT"/>
+        <ON CODE="COMPSTAT EQ 0" STMT="*">
+            <DOCOND NAME="ISL010-0000-DIA-PL01" ODATE="ODAT" SIGN="+"/>
+        </ON>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-MEN-PL01"
+        APPL_TYPE="OS"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CONFIRM="0"
+        CREATED_BY="EnterSoft"
+        CREATION_DATE="20180530"
+        CREATION_TIME="113846"
+        CREATION_USER="gbasulto"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D5"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Valida interfaz ISOLNOMINACO cobro de cuotas a Recursos Humanos Corredora"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="161"
+        JOBNAME="ISL004-020-MEN-PL01"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMLIB="D:\ISOL\PROCESOS\"
+        MEMNAME="ISLD301.BAT"
+        MULTY_AGENT="N"
+        NODEID="pl01"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        PRIORITY="AA"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="operador"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL004-MEN-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TASKTYPE="Job"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL004-010-MEN-PL01" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL004-020-MEN-PL01" ODATE="ODAT" SIGN="+"/>
+    </JOB>
+    <JOB
+        ADJUST_COND="N"
+        APPLICATION="ISL-MEN-PL01"
+        APPL_FORM="AFT"
+        APPL_TYPE="FILE_TRANS"
+        APPL_VER="7.0.0"
+        APR="1"
+        AUG="1"
+        AUTOARCH="0"
+        CM_VER="N/A"
+        CONFIRM="0"
+        CREATED_BY="EnterSoft"
+        CREATION_DATE="20180530"
+        CREATION_TIME="113846"
+        CREATION_USER="gbasulto"
+        CRITICAL="0"
+        CYCLIC="0"
+        CYCLIC_TOLERANCE="0"
+        CYCLIC_TYPE="C"
+        DATACENTER="BcoChile"
+        DAYS="D5"
+        DAYSCAL="CAL_HABIL"
+        DAYS_AND_OR="O"
+        DEC="1"
+        DESCRIPTION="Transmite Interfaz ISOLNOMINACO"
+        FEB="1"
+        IND_CYCLIC="S"
+        INTERVAL="00000M"
+        JAN="1"
+        JOBISN="164"
+        JOBNAME="ISL004-030-MEN-PL01"
+        JUL="1"
+        JUN="1"
+        MAR="1"
+        MAXDAYS="0"
+        MAXRERUN="0"
+        MAXRUNS="0"
+        MAXWAIT="1"
+        MAY="1"
+        MEMLIB="D:\ISOL\PROCESOS\"
+        MEMNAME="Envio ISOLNOMINACO a BANCHILE"
+        MULTY_AGENT="N"
+        NODEID="U574"
+        NOV="1"
+        OCT="1"
+        PARENT_FOLDER="ISL-CORE-SEGUROS"
+        PRIORITY="AA"
+        RETRO="0"
+        RULE_BASED_CALENDAR_RELATIONSHIP="O"
+        RUN_AS="aft_cs01_ntbc"
+        SEP="1"
+        SHIFT="Ignore Job"
+        SHIFTNUM="+00"
+        SUB_APPLICATION="ISL004-MEN-PL01"
+        SYSDB="0"
+        TABLE_NAME="ISL-CORE-SEGUROS"
+        TASKTYPE="Job"
+        USE_INSTREAM_JCL="N"
+>
+        <INCOND AND_OR="A" NAME="ISL004-020-MEN-PL01" ODATE="ODAT"/>
+        <OUTCOND NAME="ISL004-030-MEN-PL01" ODATE="ODAT" SIGN="+"/>
+        <VARIABLE NAME="%%FECHA" VALUE="%%$ODATE"/>
+        <VARIABLE NAME="%%AAAAMM" VALUE="%%SUBSTR %%FECHA 1 6"/>
+        <VARIABLE NAME="%%FTP-PATH" VALUE="Not in use for application jobs"/>
+        <VARIABLE NAME="%%FTP-ACCOUNT" VALUE="aft_cs01_ntbc"/>
+        <VARIABLE NAME="%%FTP-LOSTYPE" VALUE="Windows"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE1" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-LHOST" VALUE="cs01"/>
+        <VARIABLE NAME="%%FTP-LUSER" VALUE="isol"/>
+        <VARIABLE NAME="%%FTP-LPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ROSTYPE" VALUE="Unix"/>
+        <VARIABLE NAME="%%FTP-CONNTYPE2" VALUE="FTP"/>
+        <VARIABLE NAME="%%FTP-RHOST" VALUE="ntbc"/>
+        <VARIABLE NAME="%%FTP-RUSER" VALUE="tdatos"/>
+        <VARIABLE NAME="%%FTP-RPASSIVE" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TYPE1" VALUE="I"/>
+        <VARIABLE NAME="%%FTP-UPLOAD1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-LPATH1" VALUE="/ISOL\DATA\OUTPUT\ISOLNOMINACO"/>
+        <VARIABLE NAME="%%FTP-RPATH1" VALUE="/\ISOLNOMINACO"/>
+        <VARIABLE NAME="%%FTP-TIMELIMIT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-ABSTIME1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-SRCOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-IF_EXIST1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-DSTOPT1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-UNIQUE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-RECURSIVE1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRIM1" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-NULLFLDS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-VERNUM1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-EXCLUDE_WILDCARD1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-CASEIFS1" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-TRANSFER_NUM" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-CONT_EXE_NOTOK" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-RPF" VALUE="1"/>
+        <VARIABLE NAME="%%FTP-USE_DEF_NUMRETRIES" VALUE="0"/>
+        <VARIABLE NAME="%%FTP-NUM_RETRIES" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-Is" VALUE="5"/>
+        <VARIABLE NAME="%%FTP-AUTOREFRESH" VALUE="False"/>
+    </JOB>
+</DEFJOB>

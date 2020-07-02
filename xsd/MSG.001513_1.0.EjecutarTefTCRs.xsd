@@ -1,0 +1,111 @@
+<schema targetNamespace="http://osb.bancochile.cl/bch/neg/transferenciaDeFondos/ejecutarTefTCRs/mpi" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://osb.bancochile.cl/bch/neg/transferenciaDeFondos/ejecutarTefTCRs/mpi" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:com="http://osb.bancochile.cl/ent/bch/infra/mci/comun/v/3">
+  <xsd:import namespace="http://osb.bancochile.cl/ent/bch/infra/mci/comun/v/3" schemaLocation="../../../BCH.INFRA.ModeloComunInformacion/Specifications/ENT.3.0.BCH.INFRA.Comun.xsd"/>
+  <element name="ejecutarTefTCRs">
+    <complexType>
+      <sequence>
+        <element name="retorno" minOccurs="1" maxOccurs="1" type="tns:RetornoType"/>
+		<element name="idTransaccion" minOccurs="1" maxOccurs="1" type="tns:StringMax43"/>
+        <element name="fechaContable" minOccurs="1" maxOccurs="1" type="xsd:date"/>
+        <element name="saldoCtaCargo" minOccurs="0" maxOccurs="1" type="tns:Decimal13_2"/>
+        <element name="idChallenge" type="tns:StringMax24" minOccurs="0" maxOccurs="1"/>
+        <element name="reglas" minOccurs="0" maxOccurs="1" type="tns:ReglasType"/>
+      </sequence>
+    </complexType>
+  </element>
+  <xsd:complexType name="RetornoType">
+    <xsd:sequence>
+      <xsd:element name="codigoRetorno" type="tns:StringMax10" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="glosaRetorno" type="tns:StringMax50" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ReglasType">
+    <xsd:sequence>
+      <xsd:element name="montoAcumuladoDelayMaximo" minOccurs="0" maxOccurs="1" type="tns:Decimal13_2"/>
+      <xsd:element name="montoAcumuladoDelay" minOccurs="0" maxOccurs="1" type="tns:Decimal13_2"/>
+      <xsd:element name="delayMaximo" type="tns:Number3" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="delayTranscurrido" type="tns:Number3" minOccurs="0" maxOccurs="1"/>      
+    </xsd:sequence>
+  </xsd:complexType>
+  <simpleType name="StringMax1">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="1"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax2">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="2"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax3">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="3"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax10">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="10"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMin12Max20">
+    <restriction base="xsd:string">
+      <xsd:minLength value="12"/>
+      <xsd:maxLength value="20"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax15">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="15"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax20">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="20"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax24">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="24"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax29">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="29"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax30">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="30"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax35">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="35"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax43">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="43"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax50">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="50"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax70">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="70"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="Decimal13_2">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:maxInclusive value="9999999999999"/>
+      <xsd:fractionDigits value="2"/>
+    </xsd:restriction>
+  </simpleType>
+    <simpleType name="Number3">
+    <xsd:restriction base="xsd:integer">
+      <xsd:maxInclusive value="999"/>
+    </xsd:restriction>
+  </simpleType>
+</schema>

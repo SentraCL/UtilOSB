@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SEnTRA</title>
+    <link href="css/singlePageTemplate.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="result.json"></script>
+    <script src="http://use.edgefonts.net/source-sans-pro:n2:default.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Navigation -->
+        <header>
+            <img src="./images/logos sentra/sentra service &amp; tecnology.png" height="47" width="170">
+
+            <nav>
+                <h2 class="hero_header">SEnTRA <span class="light"> Inspección de Código</span></h2>
+
+            </nav>
+        </header>
+        <!-- Hero Section -->
+        <section>
+
+            <p class="tagline">
+                Cliente : Banco de Chile
+                <br> Nombre de Iniciativa : Servicio de Análisis de Código
+                <br> Jefe de Proyecto QA : Juan Antonio Flores
+                <br> Gerente de TI : Emilio Fuentealba Silva
+                <br> Business Account Manager : Paula Delpino Zapata
+                <br> Fecha : 08/07/2019
+            </p>
+        </section>
+        <section>
+            <h2 class="hero_header">Resumen  <span class="light">Ejecutivo</span></h2>
+            <p class="tagline">
+                El siguiente documento contiene el resultado del análisis de código generado por la infraestructura genérica de SEnTRA de DevSecOps que involucra aspectos de seguridad asociados a una plataforma de Integracion y despliegue continuo. De acuerdo a la realidad del cliente actual se incorporan reglas asociadas a los estándares del cliente y se realiza un “tailoring” de la infraestructura/arquitectura montada para satisfacer los requisitos del cliente a nivel de estándares, normativas y aspectos de calidad y seguridad buscados.
+            </p>
+        </section>
+
+        <!-- About Section -->
+        <section>
+            <br>
+
+            <h2 class="hero_header">1. Resumen de Producto  <span class="light">y Componentes involucrados</span></h2>
+
+            <p class="tagline">
+                Componente : ISL001-DIA-PL01-182
+                <br> Proveedor del código : desconocido
+                <br> Lenguaje : Mallas Control-M
+                <br> Fecha : 08-07-2019
+                <br> Sistema : ISOL
+                <br> Resultado del Análisis : Aprobado con Observaciones
+            </p>
+            <br>
+        </section>
+        <section>
+            <h2 class="hero_header">2. Detalle de Artefactos Asociados a los Productos  <span class="light"> y/o Componentes</span></h2>
+            <p class="tagline">
+                A continuación, se describe los componentes analizados, para los cuales se realizado una análisis Manual y automatizado
+            </p>
+        </section>
+
+        <!-- Stats Gallery Section -->
+        <div class="gallery">
+            <h2 class="tagline">2.1. Lista de Artefactos</h2>
+
+            <table id="tblArtectos">
+                <tr>
+                    <th>Artefactos</th>
+                </tr>
+      
+            </table>
+        </div>
+		
+		<span id="detalle">
+		
+		</span>
+
+        <!-- Copyrights Section -->
+        <div class="copyright">&copy;2019 - <strong>SENTRA</strong></div>
+    </div>
+    <!-- Main Container Ends -->
+	<script>
+		for (var j in data){
+			var job = data[j];
+			
+			var errors = 0
+			var jobs = Object.keys(job.JOBS).length;
+			
+			
+			document.getElementById("tblArtectos").innerHTML +="<tr><td><a href='#"+job.XMLFile+"'> "+job.XMLFile+" ("+ jobs + ")</a></td></tr>"
+			
+			
+			var JobTable = "<hr><h3 id='"+job.XMLFile+"'>"+job.XMLFile+"</h3><table>"
+			
+			
+			
+			
+			var nokeys = ['CheckRule','OUTCOND','INCOND','VARIABLE','QUANTITATIVE','ON','XMLName']
+
+			var trJon = ""
+			
+
+			//keys = keys!=Object.keys(job.JOBS[0])?Object.keys(job.JOBS[0]):keys;
+
+			var h = 0
+			for (var i in job.JOBS){
+				var subJob = job.JOBS[i]
+				var keys = Object.keys(subJob)
+				var thKey = "<tr>"
+				if (h==0) {
+					for (var k in keys){
+						if (nokeys.indexOf(k)<0){
+							thKey += "<th>" +keys[k]+ "</th>"
+						}
+					}
+					thKey += "</tr>"
+					h++
+				}
+				JobTable += thKey
+				
+				trJon +="<tr>"
+				for (var sjj in subJob){
+					if (nokeys.indexOf(sjj)<0){
+						trJon += "<td>" +subJob[sjj]+ "</td>"
+					}
+				}
+				trJon += "</tr>"
+				
+			}
+			JobTable += trJon
+			JobTable += "</table>"
+			document.getElementById("detalle").innerHTML += JobTable;
+		}
+		
+		
+		                
+
+	</script>
+</body>
+
+</html>

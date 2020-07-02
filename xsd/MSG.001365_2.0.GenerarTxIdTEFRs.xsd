@@ -1,0 +1,70 @@
+<xsd:schema targetNamespace="http://osb.bancochile.cl/bch/neg/transferenciaDeFondos/generarTxIdTEFRs/mpi" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://osb.bancochile.cl/bch/neg/transferenciaDeFondos/generarTxIdTEFRs/mpi" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:com="http://osb.bancochile.cl/ent/bch/infra/mci/comun/v/3">
+  <xsd:import namespace="http://osb.bancochile.cl/ent/bch/infra/mci/comun/v/3" schemaLocation="../../../BCH.INFRA.ModeloComunInformacion/Specifications/ENT.3.0.BCH.INFRA.Comun.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>
+      Estructura de salida usada para llamar al servicio .
+    </xsd:documentation>
+  </xsd:annotation>
+  
+   <xsd:element name="generarTxIdTEFRs" type="tns:GenerarTxIdTEFRs"/>
+    <xsd:complexType name="GenerarTxIdTEFRs">
+        <xsd:sequence>
+        
+      <xsd:element name="codigoRespuesta" type="tns:StringMax4" minOccurs="1" maxOccurs="1">
+       <xsd:annotation>
+          <xsd:documentation>Codigo Respuesta</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      
+      <xsd:element name="glosaRespuesta" type="tns:StringMax50" minOccurs="1" maxOccurs="1">
+       <xsd:annotation>
+          <xsd:documentation>Glosa Respuestao</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      
+      <xsd:element name="respuesta" type="tns:RespuestaType" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Respuesta de la transaccion, agrupa codigo de respuesta y glosa</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+
+  <xsd:complexType name="RespuestaType">
+    <xsd:sequence>
+    <xsd:element name="idTransaccion" minOccurs="0" maxOccurs="1" type="tns:StringMax29">
+        <xsd:annotation>
+          <xsd:documentation>Identificador unico de la persona</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+  <xsd:simpleType name="StringMax4">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="4"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+      <xsd:annotation>
+        <xsd:documentation>Definicion maxima del largo Elemento Codigo Respuesta</xsd:documentation>
+      </xsd:annotation>
+      
+  <xsd:simpleType name="StringMax50">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="50"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+      <xsd:annotation>
+        <xsd:documentation>Definicion maxima del largo Elemento Glosa Respuesta</xsd:documentation>
+      </xsd:annotation>
+      
+  <xsd:simpleType name="StringMax29">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="29"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+      <xsd:annotation>
+        <xsd:documentation>Definicion maxima del largo Elemento TxId</xsd:documentation>
+      </xsd:annotation>
+
+</xsd:schema>

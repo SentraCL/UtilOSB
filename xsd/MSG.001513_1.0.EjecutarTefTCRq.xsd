@@ -1,0 +1,225 @@
+<schema targetNamespace="http://osb.bancochile.cl/bch/neg/transferenciaDeFondos/ejecutarTefTCRq/mpi"
+        elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:tns="http://osb.bancochile.cl/bch/neg/transferenciaDeFondos/ejecutarTefTCRq/mpi"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:com="http://osb.bancochile.cl/ent/bch/infra/mci/comun/v/3">
+  <xsd:import namespace="http://osb.bancochile.cl/ent/bch/infra/mci/comun/v/3"
+              schemaLocation="../../../BCH.INFRA.ModeloComunInformacion/Specifications/ENT.3.0.BCH.INFRA.Comun.xsd"/>
+  <element name="ejecutarTefTCRq">
+    <complexType>
+      <sequence>
+        <element name="cabeceraTef" minOccurs="1" maxOccurs="1" type="tns:CabeceraTefType"/>
+        <element name="datosCargo" minOccurs="1" maxOccurs="1" type="tns:DatosCargoType"/>
+        <element name="datosAbono" minOccurs="1" maxOccurs="1" type="tns:DatosAbonoType"/>
+        <element name="seguridad" minOccurs="1" maxOccurs="1" type="tns:SeguridadType"/>
+        <element name="opcionales" type="tns:OpcionalesType" minOccurs="0" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <xsd:complexType name="CabeceraTefType">
+    <xsd:sequence>
+      <xsd:element name="idTransaccion" type="tns:StringMax29" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="origen" type="tns:OrigenType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="importe" type="tns:ImporteType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="asunto" type="tns:StringMax70" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="tipoTef" type="tns:StringMax3" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="OrigenType">
+    <xsd:sequence>
+      <xsd:element name="oficinaOrigen" type="tns:StringMax4" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="canal" type="tns:StringMax20" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="ipOrigen" type="tns:StringMax15" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="fechaCorriente" type="xsd:dateTime" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ImporteType">
+    <xsd:sequence>
+      <xsd:element name="monto" type="tns:Decimal16_2" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="moneda" type="tns:StringMax3" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DatosCargoType">
+    <xsd:sequence>
+      <xsd:element name="numeroTarjeta" type="tns:CuentaType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="numeroCuotas" type="tns:CuentaType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="tasaInteres" type="tns:CuentaType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="cantMesesGracia" type="tns:CuentaType" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DatosAbonoType">
+    <xsd:sequence>
+      <xsd:element name="cuenta" type="tns:CuentaType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="cliente" type="tns:ClienteType" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="cuentaGL" type="tns:StringMax20" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CuentaType">
+    <xsd:sequence>
+      <xsd:element name="numeroTarjeta" type="tns:StringMax19" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="numeroCuotas" type="tns:IntegerMax2" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="tasaInteres" type="tns:Decimal16_3" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="cantMesesGracia" type="tns:IntegerMax2" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ClienteType">
+    <xsd:sequence>
+      <xsd:element name="rut" type="tns:StringMax10" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="nombre" type="tns:StringMax100" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="segmento" type="tns:StringMax30" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="banca" type="tns:StringMax30" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="notificacion" type="tns:NotificacionType" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="NotificacionType">
+    <xsd:sequence>
+      <xsd:element name="email" type="tns:Email" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="plantilla" type="tns:StringMax20" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="notificar" type="tns:StringMax2" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SeguridadType">
+    <xsd:sequence>
+      <xsd:element name="idChallenge" type="tns:StringMax24" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="idMiPass" type="tns:StringMax50" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="tipoDispositivoSeguridad" type="tns:StringMax1" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="parametrosReglas" type="tns:ParametrosReglasType" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ParametrosReglasType">
+    <xsd:annotation>
+      <xsd:documentation>
+        Este campo se destina para definir la(s) regla(s) que puede contemplar el servicio.
+        Se debe definir el nombre de la opción a usar y el valor que esta tendrá.
+        Ejemplo:
+        delayPrimeraTEF, etc.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="campo" type="tns:CampoType" minOccurs="1" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="OpcionalesType">
+    <xsd:annotation>
+      <xsd:documentation>
+        Este campo se destina para definir información adicional que se requiera para algun backend especifico.
+        Se debe definir el nombre de la opción a usar y el valor que esta tendrá.
+        Ejemplo:
+        cbillInfo, BATREFNO, incluyeSaldo, etc.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="campo" type="tns:CampoType" minOccurs="1" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CampoType">
+    <xsd:sequence>
+      <xsd:element name="nombre" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="valor" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <simpleType name="StringMax1">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="1"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax2">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="2"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax3">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="3"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax4">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="4"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax10">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="10"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMin12Max20">
+    <restriction base="xsd:string">
+      <xsd:minLength value="12"/>
+      <xsd:maxLength value="20"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax15">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="15"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax19">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="19"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax20">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="20"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax24">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="24"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax29">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="29"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax30">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="30"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax35">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="35"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax50">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="50"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax70">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="70"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax100">
+    <restriction base="xsd:string">
+      <xsd:maxLength value="100"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="Decimal16_2">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:maxInclusive value="9999999999999999"/>
+      <xsd:fractionDigits value="2"/>
+    </xsd:restriction>
+  </simpleType>
+  <simpleType name="Decimal16_3">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:maxInclusive value="99999"/>
+      <xsd:fractionDigits value="2"/>
+    </xsd:restriction>
+  </simpleType>
+  <xsd:simpleType name="Email">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="50"/>
+      <xsd:pattern value="[^@]+@[^\.]+\..+"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <simpleType name="IntegerMax2">
+    <restriction base="xsd:integer">
+      <xsd:totalDigits value="2"/>
+    </restriction>
+  </simpleType>
+  
+</schema>
