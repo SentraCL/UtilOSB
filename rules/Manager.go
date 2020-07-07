@@ -2,6 +2,7 @@ package rules
 
 import (
 	"bytes"
+	"fmt"
 	"reflect"
 
 	"encoding/json"
@@ -28,6 +29,7 @@ type CheckRuleManager struct {
 	sourcespath string
 	resultpath  string
 	rulesID     []string
+	report      map[string][]CheckRule
 }
 
 func (m *CheckRuleManager) getDefJobFromXML() ([]Schema, error) {
@@ -71,16 +73,39 @@ func (m *CheckRuleManager) Run(sourcespath, resultpath string) {
 	m.resultpath = resultpath
 	folderXSD, _ := m.getDefJobFromXML()
 	//result := []Schema{}
-
+	m.report = map[string][]CheckRule{}
 	for _, xsdContent := range folderXSD {
 		rDefJob := Schema{}
 		rDefJob.XMLFile = xsdContent.XMLFile
-		log.Println("CHECK: \t:" + util.StringifyJSON(xsdContent.XMLFile))
+		//log.Println("CHECK: \t:" + util.StringifyJSON(xsdContent.XMLFile))
+		m.report[xsdContent.XMLFile] = []CheckRule{}
 		m.executeRules(xsdContent)
 	}
-	//file, _ := json.MarshalIndent(result, "", " ")
+	/*
+		file, _ := json.MarshalIndent(m.report, "", " ")
 
-	//_ = ioutil.WriteFile(m.resultpath+"\\result.json", file, 0644)
+		_ = ioutil.WriteFile(m.resultpath+"\\result.json", file, 0644)
+	*/
+	m.createJStoReport()
+}
+
+func (m *CheckRuleManager) createJStoReport() {
+	f, err := os.Create(m.resultpath + "\\result.json")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	_, err = f.WriteString("var data =" + util.StringifyJSON(m.report))
+	if err != nil {
+		fmt.Println(err)
+		f.Close()
+		return
+	}
+	err = f.Close()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 }
 
 func (m *CheckRuleManager) readRulesFromConfig() []string {
@@ -106,9 +131,9 @@ func (m *CheckRuleManager) executeRules(xsd Schema) {
 		check.Rule = id
 		check.Status = status
 
-		//if status != "OK" {
-		log.Println("Regla " + id + " = " + status)
-		//}
+		if status != "OK" {
+			log.Println("Regla " + id + " = " + status)
+		}
 	}
 }
 
@@ -123,5 +148,11 @@ func (m *CheckRuleManager) toRules(any interface{}, name string, args ...interfa
 func (m *CheckRuleManager) executeRuleByID(id string, xsd Schema) string {
 	r := Rule{}
 	m.toRules(&r, "Execute"+id, xsd)
+	//log.Println("Rule: \t:" + util.StringifyJSON(r))
+	result := CheckRule{}
+	result.Rule = id
+	result.Status = r.GetResult()
+	m.report[xsd.XMLFile] = append(m.report[xsd.XMLFile], result)
+
 	return r.GetResult()
 }

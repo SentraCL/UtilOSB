@@ -12,9 +12,13 @@ package rules
 //Rule : Reglas de Ejecucion
 type Rule struct {
 	result string
+	detail string
 }
 
 //GetResult : Retorna el resultado de la regla
 func (r *Rule) GetResult() string {
+	if r.result != "OK" {
+		return r.result + ":" + r.detail
+	}
 	return r.result
 }

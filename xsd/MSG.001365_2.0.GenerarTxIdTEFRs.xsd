@@ -30,6 +30,8 @@
       </xsd:sequence>
     </xsd:complexType>
 
+  
+  
   <xsd:complexType name="RespuestaType">
     <xsd:sequence>
     <xsd:element name="idTransaccion" minOccurs="0" maxOccurs="1" type="tns:StringMax29">

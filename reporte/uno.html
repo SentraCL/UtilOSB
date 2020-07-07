@@ -29,10 +29,6 @@
             <p class="tagline">
                 Cliente : Banco de Chile
                 <br> Nombre de Iniciativa : Servicio de Análisis de Código
-                <br> Jefe de Proyecto QA : Juan Antonio Flores
-                <br> Gerente de TI : Emilio Fuentealba Silva
-                <br> Business Account Manager : Paula Delpino Zapata
-                <br> Fecha : 08/07/2019
             </p>
         </section>
         <section>
@@ -50,11 +46,8 @@
 
             <p class="tagline">
                 Componente : ISL001-DIA-PL01-182
-                <br> Proveedor del código : desconocido
-                <br> Lenguaje : Mallas Control-M
-                <br> Fecha : 08-07-2019
-                <br> Sistema : ISOL
-                <br> Resultado del Análisis : Aprobado con Observaciones
+                <br> Lenguaje : OSB
+                
             </p>
             <br>
         </section>
@@ -80,55 +73,32 @@
         <span id="detalle">
 
         </span>
-
-        <!-- Copyrights Section -->
+		<br/>
+		<br/>
+		<!-- Copyrights Section -->
         <div class="copyright">&copy;2019 - <strong>SENTRA</strong></div>
     </div>
     <!-- Main Container Ends -->
     <script>
-        for (var j in data) {
-            var job = data[j];
-            var jobs = Object.keys(job.JOBS).length;
-            document.getElementById("tblArtectos").innerHTML += "<tr><td><a href='#" + job.XMLFile + "'> " + job.XMLFile + " (" + jobs + ")</a></td></tr>"
-
-            var spanDetail = "<hr><h2 id='" + job.XMLFile + "'>" + job.XMLFile + "</h2>"
-            var nokeys = ['CheckRule', 'OUTCOND', 'INCOND', 'VARIABLE', 'QUANTITATIVE', 'ON', 'XMLName']
-            var trJon = "<table>"
-            //keys = keys!=Object.keys(job.JOBS[0])?Object.keys(job.JOBS[0]):keys;
-
-
-            var h = 0
-            for (var i in job.JOBS) {
-                spanDetail += "<small >"
-                var subJob = job.JOBS[i]
-                var indice = 1 + parseInt(i);
-                spanDetail += "<h4>" + (indice) + " ) " + subJob.JOBNAME + " , <strong> " + subJob.DESCRIPTION + "</strong> <small>(" + job.XMLFile + ")</small></h4> "
-
-                var reglas = "<table >"
-                reglas += `<tr><th><strong>Regla</strong></th><th>Resultado</th></tr>`
-                for (var r in subJob.CheckRule) {
-                    regla = subJob.CheckRule[r]
-                    reglas += `<tr><td><strong>${regla.rule}</strong></td><td><span style="color:${regla.status=='OK'?"green":"red"}">${regla.status}</span></td></tr>`
-                }
-
-                reglas += "</table>"
-                /*
-
-                var jobTable = reglas + "<br><table>"
-                for (var atri in subJob) {
-                    if (nokeys.indexOf(atri) < 0) {
-                        jobTable += `<tr><td><strong>${atri}</strong></td><td>${subJob[atri]}</td></tr>`
-                    }
-                }
-                jobTable += "</table>"
-                spanDetail += jobTable + "</small>"
-                */
-                spanDetail += reglas + "</small>"
-
+        for (var xsd in data) {
+			console.log(xsd);
+			document.getElementById("tblArtectos").innerHTML += "<tr><td><a href='#" +xsd + "'> " + xsd + " (" + Object.keys(data[xsd]).length + ")</a></td></tr>"
+			var indice = 1;
+			var spanDetail = "<hr><h2 id='" + xsd + "'>" + xsd + "</h2>"
+			var reglas = "<table >"
+            reglas += `<tr><th><strong>Regla</strong></th><th>Resultado</th></tr>`			
+			for (var rule in data[xsd]) {
+				console.log(JSON.stringify(rule));
+				var id = data[xsd][rule].rule
+				var status = data[xsd][rule].status
+				reglas += `<tr><td><strong>${id}</strong></td><td><span style="color:${status=='OK'?"green":"red"}">${status}</span></td></tr>`									
             }
-
+			reglas += "</table>"
+			spanDetail += reglas + "</small>"
             spanDetail += "</span>"
+			
             document.getElementById("detalle").innerHTML += spanDetail;
+			
         }
     </script>
 </body>

@@ -8,10 +8,12 @@ import (
 func (r *Rule) Execute1(xsd Schema) {
 	for _, complexType := range xsd.ComplexType {
 		for _, element := range complexType.Sequence.Element {
+			//fmt.Println(element.Name)
 			if element.Name[0:1] == strings.ToLower(element.Name[0:1]) {
 				r.result = "OK"
 			} else {
 				r.result = "NOK"
+				r.detail = r.detail + "Nombre no valido " + element.Name + "\n"
 			}
 		}
 	}
