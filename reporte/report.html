@@ -44,7 +44,7 @@
         <section>
             <br>
 
-            <h2 class="hero_header">1. Resumen de Producto <span class="light">y Componentes involucrados</span></h2>
+            <h2 class="hero_header">1. Resumen de Producto <span class="light">y Criterio de Reglas Aplicadas</span></h2>
 
             <p class="tagline">
                 Componente : ISL001-DIA-PL01-182
@@ -53,6 +53,9 @@
                 <br> Resultado del Análisis : Aprobado con Observaciones
             </p>
             <br>
+            <div id="mandamientos">
+
+            </div>
         </section>
         <section>
             <h2 class="hero_header">2. Detalle de Artefactos Asociados a los Productos <span class="light"> y/o Componentes</span></h2>
@@ -85,6 +88,25 @@
     </div>
     <!-- Main Container Ends -->
     <script>
+
+        function infoPlease(id){
+            var description = "";
+            rulesInfo.forEach(rule => {
+                if (rule.id==id){
+                    description = rule.info;
+                }
+            });
+            return description
+        }
+        var tableRules = "<table >"
+            tableRules+=`<tr><th>Regla ID</th><th>Descripción</th><th>Extención</th></tr>`
+            rulesInfo.forEach(rule => {
+                tableRules+=`<tr><td>${rule.id}</td><td><small>${rule.info}</small></td><td>${rule.ext}</td></tr>`
+            });
+        tableRules += "</table><br/>"
+        
+        document.getElementById("mandamientos").innerHTML += tableRules;
+
         for (var xsd in data) {
 			console.log(xsd);
 			document.getElementById("tblArtectos").innerHTML += "<tr><td><a href='#" +xsd + "'> " + xsd + " (" + Object.keys(data[xsd]).length + ")</a></td></tr>"
@@ -96,7 +118,8 @@
 				console.log(JSON.stringify(rule));
 				var id = data[xsd][rule].rule
 				var status = data[xsd][rule].status
-				reglas += `<tr><td><strong>${id}</strong></td><td><span style="color:${status=='OK'?"green":"red"}">${status}</span></td></tr>`									
+                var defRules = infoPlease(id);
+				reglas += `<tr><td><strong title="${defRules}">${id}</strong></td><td><span style="color:${status=='OK'?"green":"red"}">${status}</span></td></tr>`									
             }
 			reglas += "</table>"
 			spanDetail += reglas + "</small>"

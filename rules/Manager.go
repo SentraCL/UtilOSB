@@ -24,11 +24,18 @@ type CheckRule struct {
 	Status string `json:"status"`
 }
 
+//RuleJSON , Reglas en JSON
+type RuleJSON struct {
+	ID   string `json:"id"`
+	Info string `json:"info"`
+	Ext  string `json:"ext"`
+}
+
 //CheckRuleManager , Manager Administrador de Ejecucion de Reglas.
 type CheckRuleManager struct {
 	sourcespath string
 	resultpath  string
-	rulesID     []string
+	rulesDef    []RuleJSON
 	report      map[string][]CheckRule
 }
 
@@ -68,24 +75,17 @@ func (m *CheckRuleManager) getDefJobFromXML() ([]Schema, error) {
 
 //Run , Ejecuta las reglas.
 func (m *CheckRuleManager) Run(sourcespath, resultpath string) {
-	m.rulesID = m.readRulesFromConfig()
+	m.rulesDef = m.readRulesFromConfig()
 	m.sourcespath = sourcespath
 	m.resultpath = resultpath
 	folderXSD, _ := m.getDefJobFromXML()
-	//result := []Schema{}
 	m.report = map[string][]CheckRule{}
 	for _, xsdContent := range folderXSD {
 		rDefJob := Schema{}
 		rDefJob.XMLFile = xsdContent.XMLFile
-		//log.Println("CHECK: \t:" + util.StringifyJSON(xsdContent.XMLFile))
 		m.report[xsdContent.XMLFile] = []CheckRule{}
 		m.executeRules(xsdContent)
 	}
-	/*
-		file, _ := json.MarshalIndent(m.report, "", " ")
-
-		_ = ioutil.WriteFile(m.resultpath+"\\result.json", file, 0644)
-	*/
 	m.createJStoReport()
 }
 
@@ -95,7 +95,9 @@ func (m *CheckRuleManager) createJStoReport() {
 		fmt.Println(err)
 		return
 	}
-	_, err = f.WriteString("var data =" + util.StringifyJSON(m.report))
+	code := "var data =" + util.StringifyJSON(m.report) + "\n" + "var rulesInfo=" + util.StringifyJSON(m.rulesDef)
+
+	_, err = f.WriteString(code)
 	if err != nil {
 		fmt.Println(err)
 		f.Close()
@@ -108,13 +110,13 @@ func (m *CheckRuleManager) createJStoReport() {
 	}
 }
 
-func (m *CheckRuleManager) readRulesFromConfig() []string {
+func (m *CheckRuleManager) readRulesFromConfig() []RuleJSON {
 	rulesJSON, err := ioutil.ReadFile("./rules/rules.json")
 	if err != nil {
 		log.Print(err)
 	}
 	var config struct {
-		Rules []string `json:"rules"`
+		Rules []RuleJSON `json:"rules"`
 	}
 	err = json.Unmarshal(rulesJSON, &config)
 	if err != nil {
@@ -125,14 +127,14 @@ func (m *CheckRuleManager) readRulesFromConfig() []string {
 
 func (m *CheckRuleManager) executeRules(xsd Schema) {
 
-	for _, id := range m.rulesID {
+	for _, ruleDef := range m.rulesDef {
 		check := CheckRule{}
-		status := m.executeRuleByID(id, xsd)
-		check.Rule = id
+		status := m.executeRule(ruleDef, xsd)
+		check.Rule = ruleDef.ID
 		check.Status = status
 
 		if status != "OK" {
-			log.Println("Regla " + id + " = " + status)
+			log.Println("Regla " + ruleDef.ID + " = " + status)
 		}
 	}
 }
@@ -145,12 +147,12 @@ func (m *CheckRuleManager) toRules(any interface{}, name string, args ...interfa
 	reflect.ValueOf(any).MethodByName(name).Call(params)
 }
 
-func (m *CheckRuleManager) executeRuleByID(id string, xsd Schema) string {
+func (m *CheckRuleManager) executeRule(ruleDef RuleJSON, xsd Schema) string {
 	r := Rule{}
-	m.toRules(&r, "Execute"+id, xsd)
-	//log.Println("Rule: \t:" + util.StringifyJSON(r))
+	r.MyRule = ruleDef
+	m.toRules(&r, "Execute"+ruleDef.ID, xsd)
 	result := CheckRule{}
-	result.Rule = id
+	result.Rule = ruleDef.ID
 	result.Status = r.GetResult()
 	m.report[xsd.XMLFile] = append(m.report[xsd.XMLFile], result)
 
