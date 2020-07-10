@@ -90,23 +90,30 @@ func (m *CheckRuleManager) Run(sourcespath, resultpath string) {
 }
 
 func (m *CheckRuleManager) createJStoReport() {
-	f, err := os.Create(m.resultpath + "\\result.json")
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	code := "var data =" + util.StringifyJSON(m.report) + "\n" + "var rulesInfo=" + util.StringifyJSON(m.rulesDef)
 
-	_, err = f.WriteString(code)
-	if err != nil {
-		fmt.Println(err)
-		f.Close()
-		return
-	}
-	err = f.Close()
-	if err != nil {
-		fmt.Println(err)
-		return
+	if util.CreateFolder(m.resultpath) {
+		util.CopyFile("./static/report.html", m.resultpath+"/report.html")
+
+		f, err := os.Create(m.resultpath + "\\result.json")
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+		code := "var data =" + util.StringifyJSON(m.report) + "\n" + "var rulesInfo=" + util.StringifyJSON(m.rulesDef)
+
+		_, err = f.WriteString(code)
+		if err != nil {
+			fmt.Println(err)
+			f.Close()
+			return
+		}
+		err = f.Close()
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+	} else {
+		fmt.Println("No fue posible crear la carpeta de reporte :(")
 	}
 }
 
